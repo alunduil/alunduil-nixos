@@ -3,11 +3,9 @@
 {
   imports = [
     ./common-configuration.nix
+    ./simple-mail.nix
   ];
 
   networking.hostName = "daneel.alunduil.com";
-
-  services.postfix.enable = true;
-
   time.timeZone = "America/Chicago";
 }
