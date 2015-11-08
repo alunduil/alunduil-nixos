@@ -5,7 +5,7 @@
     ./common-configuration.nix
   ];
 
-  networking.hostName = "daneel";
+  networking.hostName = "daneel.alunduil.com";
 
   services.postfix.enable = true;
 
