@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./common-configuration.nix
-    ];
+  imports = [
+    ./common-configuration.nix
+  ];
 
   networking.hostName = "daneel";
 

@@ -1,14 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./common-boot.nix
-      ./common-networking.nix
-      ./common-services.nix
-      ./common-users.nix
-      ./packages-my-system.nix
-    ];
+  imports = [
+    ./common-boot.nix
+    ./common-networking.nix
+    ./common-services.nix
+    ./common-users.nix
+    ./packages-my-system.nix
+  ];
 
   environment.noXlibs = true;
 
