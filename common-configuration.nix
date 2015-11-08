@@ -10,6 +10,8 @@
       ./packages-my-system.nix
     ];
 
+  environment.noXlibs = true;
+
   nix.gc.automatic = true;
 
   programs.zsh.enable = true;

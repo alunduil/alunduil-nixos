@@ -3,7 +3,7 @@
 {
   imports = [];
 
-  boot.extraKernelParams = [ "ipv6.disable=1" ];
+  boot.kernelParams = [ "ipv6.disable=1" ];
   networking.enableIPv6 = false;
 
   networking.domain = "alunduil.com";
