@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./bacula-fd.nix
+  ];
 
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "no";
