@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./bacula-fd.nix
+  ];
 
   services.acpid.enable = true;
 
