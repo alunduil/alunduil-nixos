@@ -19,6 +19,4 @@
     { device = "/dev/sda"; }
     { device = "/dev/sdb"; }
   ];
-
-  services.uptimed.enable = true;
 }
