@@ -8,6 +8,16 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
-  networking.hostName = "mycroft.alunduil.com";
   time.timeZone = "America/Chicago";
+
+  networking.hostName = "mycroft.alunduil.com";
+
+  networking.nameservers = [
+    "8.8.8.8"
+    "8.8.4.4"
+  ];
+
+  networking.defaultGateway = "64.68.174.1";
+
+  networking.interfaces.enp0s7.ip4 = [ { address = "64.68.174.57"; prefixLength = 24; } ];
 }
