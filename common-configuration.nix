@@ -14,7 +14,6 @@
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 90d";
 
   nix.useChroot = true;
 
