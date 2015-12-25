@@ -3,5 +3,5 @@
 {
   imports = [];
 
-  services.bacula-fd.enable = true;
+  services.bacula-sd.enable = true;
 }

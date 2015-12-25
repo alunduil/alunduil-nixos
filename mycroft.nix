@@ -3,6 +3,8 @@
 {
   imports = [
     ./common-configuration.nix
+    ./bacula-director.nix
+    ./bacula-sd.nix
     ./simple-mail.nix
   ];
 
