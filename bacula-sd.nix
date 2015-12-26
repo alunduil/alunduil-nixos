@@ -15,6 +15,7 @@
     Device Type = File
     Random Access = yes
     Requires Mount = no
+    Label Media = yes
     '';
   };
 }
