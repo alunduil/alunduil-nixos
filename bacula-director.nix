@@ -64,7 +64,6 @@
     Schedule = DAILY
     Max Start Delay = 6 hours
     Max Run Sched Time = 8 hours
-    Maximum Bandwidth = 95 m/s
     Max Full Interval = 7 days
     Prefer Mounted Volumes = yes
     Cancel Lower Level Duplicates = yes
