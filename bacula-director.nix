@@ -156,5 +156,5 @@
     Device = USB-RAID1
     Media Type = USB-RAID1-882e244d128a40ffaa0c85b4f58457f2
   }
-  ''
-};
+  '';
+}
