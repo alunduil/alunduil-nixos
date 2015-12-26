@@ -6,5 +6,5 @@
   services.bacula-sd.enable = true;
   services.bacula-sd.name = config.networking.hostName + "-sd";
 
-  services.bacula-sd.director."mycroft.alunduil.com-dir".password = "998da8a46eaa434e8be8ff7fc877cf94";
+  services.bacula-sd.director."mycroft.alunduil.com-dir".password = "ab21917b042b43ae996534179bb32eba";
 }
