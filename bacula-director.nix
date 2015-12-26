@@ -20,8 +20,9 @@
 
   Job {
     Name = HOME-mycroft.alunduil.com
-    JobDefs = HOME-DEFAULTS
+    JobDefs = BACKUP-DEFAULTS
     Client = CLIENT-mycroft.alunduil.com
+    FileSet = HOME
     Messages = Standard
     Enabled = yes
     Priority = 10
@@ -29,8 +30,9 @@
 
   Job {
     Name = HOME-sherlock.alunduil.com
-    JobDefs = HOME-DEFAULTS
+    JobDefs = BACKUP-DEFAULTS
     Client = CLIENT-sherlock.alunduil.com
+    FileSet = HOME
     Messages = Standard
     Enabled = yes
     Priority = 10
@@ -38,8 +40,9 @@
 
   Job {
     Name = HOME-giskard.alunduil.com
-    JobDefs = HOME-DEFAULTS
+    JobDefs = BACKUP-DEFAULTS
     Client = CLIENT-giskard.alunduil.com
+    FileSet = HOME
     Messages = Standard
     Enabled = yes
     Priority = 10
@@ -49,15 +52,10 @@
     Name = CATALOG-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = CLIENT-mycroft.alunduil.com
+    FileSet = HOME
     Messages = Standard
     Enabled = yes
     Priority = 20
-  }
-
-  JobDefs {
-    Name = HOME-DEFAULTS
-    JobDefs = BACKUP-DEFAULTS
-    FileSet = HOME
   }
 
   JobDefs {
