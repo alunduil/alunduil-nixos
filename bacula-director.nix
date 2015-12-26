@@ -92,16 +92,15 @@
 
   FileSet {
     Name = EVERYTHING
-    Options {
-      compression = GZIP
-      signature = SHA1
-      noatime = yes
-      checkfilechanges = yes
-      aclsupport = yes
-      xattrsupport = yes
-    }
     Include {
       Options {
+        compression = GZIP
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
+
 	onefs = no
 
 	fstype = rootfs
@@ -117,16 +116,15 @@
 
   FileSet {
     Name = HOME
-    Options {
-      compression = GZIP
-      signature = SHA1
-      noatime = yes
-      checkfilechanges = yes
-      aclsupport = yes
-      xattrsupport = yes
-    }
     Include {
       Options {
+        compression = GZIP
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
+
 	wilddir = "/tmp"
 	wilddir = "/lost+found"
 	exclude = yes
