@@ -3,7 +3,7 @@
 {
   imports = [];
 
-  filesystems."/var/db/postgresql" = {
+  fileSystems."/var/db/postgresql" = {
     device = "/dev/disk/by-uuid/8db66416-4a8a-4f89-b828-55cb2b2ded50";
     fsType = "ext4";
   };

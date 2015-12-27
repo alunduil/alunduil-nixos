@@ -3,7 +3,7 @@
 {
   imports = [];
 
-  filesystems."/var/backups" = {
+  fileSystems."/var/backups" = {
     device = "/dev/disk/by-uuid/8ecf60d1-8450-46c7-b171-b7eb5c4b2ade";
     fsType = "ext4";
   };
