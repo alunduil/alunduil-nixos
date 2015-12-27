@@ -15,8 +15,8 @@
   services.bacula-dir.password = "998da8a46eaa434e8be8ff7fc877cf94";
 
   services.bacula-dir.extraMessagesConfig = ''
-  MailCommand = "bsmtp -h localhost -f \"" + config.networking.hostName + "\" -s \"Bacula—%l %t of %c %e\" %r"
-  OperatorCommand = "bsmtp -h localhost -f \"" + config.networking.hostName + "\" -s \"Bacula—Intervation needed for %j\" %r"
+  MailCommand = "bsmtp -h localhost -f \"'' + config.networking.hostName + ''\" -s \"Bacula—%l %t of %c %e\" %r"
+  OperatorCommand = "bsmtp -h localhost -f \"'' + config.networking.hostName + ''\" -s \"Bacula—Intervation needed for %j\" %r"
   mail = root = all, !skipped, !restored
   operator = root = mount
   '';
