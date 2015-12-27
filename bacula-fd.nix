@@ -10,5 +10,5 @@
 
   networking.firewall.extraCommands = ''
   iptables -A nixos-fw -s mycroft.alunduil.com -p tcp --dport 9102 -j nixos-fw-accept
-  ''
+  '';
 }
