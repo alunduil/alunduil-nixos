@@ -19,7 +19,7 @@
   OperatorCommand = "bsmtp -h localhost -f \"%d \<no-reply@backups.alunduil.com\>\" -s \"Bacula—Intervation needed for %j\" %r"
   mail = root = all, !skipped, !restored
   operator = root = mount
-  ''
+  '';
 
   services.bacula-dir.extraConfig = ''
   Job {
