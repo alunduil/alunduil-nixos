@@ -63,21 +63,10 @@
   }
 
   Job {
-    Name = CATALOG-mycroft.alunduil.com
-    JobDefs = BACKUP-DEFAULTS
-    Client = CLIENT-mycroft.alunduil.com
-    FileSet = HOME
-    Messages = Standard
-    Enabled = yes
-    Priority = 20
-  }
-
-  Job {
     Name = RESTORE
     Type = Restore
-    Client = ANY
-    FileSet = ANY
-    Storage = ANY
+    Client = CLIENT-mycroft.alunduil.com
+    FileSet = NONE
     Messages = Standard
     Pool = USB-RAID1
   }
@@ -158,6 +147,10 @@
       }
       File = /home
     }
+  }
+
+  FileSet {
+    Name = NONE
   }
 
   Schedule {
