@@ -63,6 +63,16 @@
   }
 
   Job {
+    Name = LAPTOPS-mycroft.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = CLIENT-mycroft.alunduil.com
+    FileSet = LAPTOPS
+    Messages = Standard
+    Enabled = yes
+    Priority = 20
+  }
+
+  Job {
     Name = RESTORE
     Type = Restore
     Client = CLIENT-mycroft.alunduil.com
@@ -146,6 +156,24 @@
 	exclude = yes
       }
       File = /home
+    }
+  }
+
+  FileSet {
+    Name = LAPTOPS
+    Include {
+      Options {
+        compression = GZIP
+	signature = SHA1
+	noatime = yes
+	checkfilechanges = yes
+	aclsupport = yes
+	xattrsupport = yes
+
+	wilddir = "/lost+found"
+	exclude = yes
+      }
+      File = /var/backups/laptops
     }
   }
 
