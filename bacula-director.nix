@@ -38,8 +38,10 @@
     Client = elijah.laptops.alunduil.com
     FileSet = EVERYTHING
     Messages = Standard
-    Enabled = no
-    Priority = 10
+    Enabled = yes
+    Schedule = NEVER
+    Priority = 5
+    Cancel Queued Duplicates = yes
   }
 
   Job {
@@ -202,6 +204,10 @@
   Schedule {
     Name = DAILY
     Run = daily at 23:05
+  }
+
+  Schedule {
+    Name = NEVER
   }
 
   Pool {
