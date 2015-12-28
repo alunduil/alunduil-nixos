@@ -33,6 +33,16 @@
   }
 
   Job {
+    Name = FULL-elijah.laptops.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = elijah.laptops.alunduil.com
+    FileSet = EVERYTHING
+    Messages = Standard
+    Enabled = no
+    Priority = 10
+  }
+
+  Job {
     Name = HOME-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = mycroft.alunduil.com
@@ -93,6 +103,14 @@
     Max Full Interval = 7 days
     Prefer Mounted Volumes = yes
     Cancel Lower Level Duplicates = yes
+  }
+
+  Client {
+    Name = elijah.laptops.alunduil.com
+    Address = localhost
+    FD Port = 19102
+    Catalog = PostgreSQL
+    Password = "998da8a46eaa434e8be8ff7fc877cf94"
   }
 
   Client {
