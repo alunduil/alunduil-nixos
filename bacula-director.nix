@@ -25,7 +25,7 @@
   Job {
     Name = FULL-giskard.alunduil.com
     JobDefs = BACKUP-DEFAULTS
-    Client = CLIENT-giskard.alunduil.com
+    Client = giskard.alunduil.com
     FileSet = EVERYTHING
     Messages = Standard
     Enabled = yes
@@ -35,7 +35,7 @@
   Job {
     Name = HOME-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
-    Client = CLIENT-mycroft.alunduil.com
+    Client = mycroft.alunduil.com
     FileSet = HOME
     Messages = Standard
     Enabled = yes
@@ -45,7 +45,7 @@
   Job {
     Name = HOME-sherlock.alunduil.com
     JobDefs = BACKUP-DEFAULTS
-    Client = CLIENT-sherlock.alunduil.com
+    Client = sherlock.alunduil.com
     FileSet = HOME
     Messages = Standard
     Enabled = yes
@@ -55,7 +55,7 @@
   Job {
     Name = HOME-giskard.alunduil.com
     JobDefs = BACKUP-DEFAULTS
-    Client = CLIENT-giskard.alunduil.com
+    Client = giskard.alunduil.com
     FileSet = HOME
     Messages = Standard
     Enabled = no
@@ -65,7 +65,7 @@
   Job {
     Name = LAPTOPS-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
-    Client = CLIENT-mycroft.alunduil.com
+    Client = mycroft.alunduil.com
     FileSet = LAPTOPS
     Messages = Standard
     Enabled = yes
@@ -75,7 +75,7 @@
   Job {
     Name = RESTORE
     Type = Restore
-    Client = CLIENT-mycroft.alunduil.com
+    Client = mycroft.alunduil.com
     FileSet = NONE
     Messages = Standard
     Pool = USB-RAID1
@@ -96,21 +96,21 @@
   }
 
   Client {
-    Name = CLIENT-giskard.alunduil.com
+    Name = giskard.alunduil.com
     Address = giskard.alunduil.com
     Catalog = PostgreSQL
     Password = "998da8a46eaa434e8be8ff7fc877cf94"
   }
 
   Client {
-    Name = CLIENT-mycroft.alunduil.com
+    Name = mycroft.alunduil.com
     Address = mycroft.alunduil.com
     Catalog = PostgreSQL
     Password = "998da8a46eaa434e8be8ff7fc877cf94"
   }
 
   Client {
-    Name = CLIENT-sherlock.alunduil.com
+    Name = sherlock.alunduil.com
     Address = sherlock.alunduil.com
     Catalog = PostgreSQL
     Password = "998da8a46eaa434e8be8ff7fc877cf94"
