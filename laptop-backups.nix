@@ -6,6 +6,7 @@
   fileSystems."/var/backups/laptops" = {
     device = "/dev/disk/by-uuid/add90682-ac74-40cd-b541-7d19bc579c77";
     fsType = "ext4";
+    neededForBoot = true;
   };
 
   environment.systemPackages = with pkgs; [
