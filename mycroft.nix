@@ -3,9 +3,9 @@
 {
   imports = [
     ./common-configuration.nix
-    ./bacula-director.nix
-    ./bacula-sd.nix
-    ./laptop-backups.nix
+    #./bacula-director.nix
+    #./bacula-sd.nix
+    #./laptop-backups.nix
     ./simple-mail.nix
   ];
 
