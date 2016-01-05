@@ -6,7 +6,7 @@
   networking.firewall.allowedTCPPorts = [ 9103 ];
 
   boot.kernel.sysctl = {
-    net.ipv4.tcp_keepalive_time = 30;
+    "net.ipv4.tcp_keepalive_time" = 30;
   };
 
   services.bacula-dir.enable = true;

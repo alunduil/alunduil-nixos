@@ -4,7 +4,7 @@
   imports = [];
 
   boot.kernel.sysctl = {
-    net.ipv4.tcp_keepalive_time = 30;
+    "net.ipv4.tcp_keepalive_time" = 30;
   };
 
   services.bacula-sd.enable = true;
