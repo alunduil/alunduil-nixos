@@ -5,9 +5,17 @@
 
   networking.firewall.allowedTCPPorts = [ 9103 ];
 
+  boot.kernel.sysctl = {
+    net.ipv4.tcp_keepalive_time = 30;
+  };
+
   services.bacula-dir.enable = true;
   services.bacula-dir.name = config.networking.hostName + "-dir";
   services.bacula-dir.password = "998da8a46eaa434e8be8ff7fc877cf94";
+
+  services.bacula-dir.extraDirectorConfig = ''
+  Heartbeat Interval = 30;
+  '';
 
   services.bacula-dir.extraMessagesConfig = ''
   MailCommand = "bsmtp -h localhost -f \"%d <root@${config.networking.hostName}>\" -s \"Bacula—%n %e\" %r"
@@ -220,6 +228,7 @@
     Password = "ab21917b042b43ae996534179bb32eba"
     Device = USB-RAID1
     Media Type = USB-RAID1-882e244d128a40ffaa0c85b4f58457f2
+    Heartbeat Interval = 30
   }
   '';
 }
