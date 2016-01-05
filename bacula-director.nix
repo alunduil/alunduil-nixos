@@ -150,6 +150,7 @@
 
 	fstype = rootfs
 	fstype = ext4
+	fstype = btrfs
 
 	wilddir = "/tmp"
 	wilddir = "/lost+found"
