@@ -3,10 +3,6 @@
 {
   imports = [];
 
-  boot.kernel.sysctl = {
-    "net.ipv4.tcp_keepalive_time" = 30;
-  };
-
   services.bacula-sd.enable = true;
   services.bacula-sd.name = config.networking.hostName + "-sd";
 
