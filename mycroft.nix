@@ -6,7 +6,7 @@
     ./bacula-director.nix
     ./bacula-sd.nix
     ./laptop-backups.nix
-    ./simple-mail.nix
+    #./simple-mail.nix
   ];
 
   hardware.cpu.amd.updateMicrocode = true;
