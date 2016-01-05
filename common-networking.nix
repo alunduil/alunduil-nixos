@@ -10,7 +10,5 @@
 
   networking.domain = "alunduil.com";
 
-  networking.tcpcrypt.enable = true;
-
   networking.firewall.allowPing = true;
 }
