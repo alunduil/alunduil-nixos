@@ -64,16 +64,6 @@
   }
 
   Job {
-    Name = HOME-giskard.alunduil.com
-    JobDefs = BACKUP-DEFAULTS
-    Client = giskard.alunduil.com
-    FileSet = HOME
-    Messages = Standard
-    Enabled = no
-    Priority = 10
-  }
-
-  Job {
     Name = LAPTOPS-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = mycroft.alunduil.com
