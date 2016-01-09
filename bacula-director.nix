@@ -175,7 +175,7 @@
 
   Pool {
     Name = USB-RAID1
-    Maximum Volumes = 325
+    Maximum Volumes = 393
     Pool Type = Backup
     Storage = USB-RAID1-mycroft.alunduil.com
     Maximum Volume Bytes = 2GB
