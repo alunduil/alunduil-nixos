@@ -12,9 +12,9 @@
   Heartbeat Interval = 30
   '';
 
-  services.bacula-sd.device."USB-RAID1" = {
+  services.bacula-sd.device."USB-RAID" = {
     archiveDevice = "/var/backups";
-    mediaType = "USB-RAID1-882e244d128a40ffaa0c85b4f58457f2";
+    mediaType = "USB-RAID-882e244d128a40ffaa0c85b4f58457f2";
     extraDeviceConfig = ''
     Device Type = File
     Random Access = yes

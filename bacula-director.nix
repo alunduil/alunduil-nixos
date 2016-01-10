@@ -69,7 +69,7 @@
     Client = mycroft.alunduil.com
     FileSet = NONE
     Messages = Standard
-    Pool = USB-RAID1
+    Pool = USB-RAID
   }
 
   JobDefs {
@@ -77,7 +77,7 @@
     Type = Backup
     Level = Differential
     Accurate = yes
-    Pool = USB-RAID1
+    Pool = USB-RAID
     Schedule = DAILY
     Max Start Delay = 6 hours
     Max Run Sched Time = 8 hours
@@ -174,20 +174,20 @@
   }
 
   Pool {
-    Name = USB-RAID1
+    Name = USB-RAID
     Maximum Volumes = 393
     Pool Type = Backup
-    Storage = USB-RAID1-mycroft.alunduil.com
+    Storage = USB-RAID-mycroft.alunduil.com
     Maximum Volume Bytes = 2GB
-    LabelFormat = "USB-RAID1-VOL"
+    LabelFormat = "USB-RAID-VOL"
   }
 
   Storage {
-    Name = USB-RAID1-mycroft.alunduil.com
+    Name = USB-RAID-mycroft.alunduil.com
     Address = mycroft.alunduil.com
     Password = "ab21917b042b43ae996534179bb32eba"
-    Device = USB-RAID1
-    Media Type = USB-RAID1-882e244d128a40ffaa0c85b4f58457f2
+    Device = USB-RAID
+    Media Type = USB-RAID-882e244d128a40ffaa0c85b4f58457f2
     Heartbeat Interval = 30
   }
   '';
