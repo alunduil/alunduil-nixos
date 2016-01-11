@@ -44,6 +44,18 @@
   }
 
   Job {
+    Name = GLADIA-elijah.laptops.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = elijah.laptops.alunduil.com
+    FileSet = GLADIA
+    Messages = Standard
+    Enabled - yes
+    Schedule = NEVER
+    Priority = 7
+    Cancel Queued Duplicates = yes
+  }
+
+  Job {
     Name = HOME-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = mycroft.alunduil.com
@@ -157,6 +169,24 @@
 	exclude = yes
       }
       File = /home
+    }
+  }
+
+  FileSet {
+    Name = GLADIA
+    Include {
+      Options {
+        compression = GZIP
+	signature = SHA1
+	noatime = yes
+	checkfilechanges = yes
+	aclsupport = yes
+	xattrsupport = yes
+
+	wilddir = "/lost+found"
+	exclude = yes
+      }
+      File = /media/gladia
     }
   }
 
