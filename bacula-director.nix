@@ -186,7 +186,9 @@
 	wilddir = "/lost+found"
 	exclude = yes
       }
-      File = /media/gladia
+      File = /media/gladia/scanned
+      File = /media/gladia/media
+      File = /media/gladia/documents
     }
   }
 
