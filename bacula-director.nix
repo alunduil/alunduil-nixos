@@ -49,7 +49,7 @@
     Client = elijah.laptops.alunduil.com
     FileSet = GLADIA
     Messages = Standard
-    Enabled - yes
+    Enabled = yes
     Schedule = NEVER
     Priority = 7
     Cancel Queued Duplicates = yes
