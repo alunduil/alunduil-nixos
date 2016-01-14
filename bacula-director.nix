@@ -146,6 +146,7 @@
 
 	wilddir = "/tmp"
 	wilddir = "/lost+found"
+	wilddir = "/distfiles"
 	exclude = yes
       }
       File = /
@@ -165,7 +166,6 @@
 
 	wilddir = "/tmp"
 	wilddir = "/lost+found"
-	wilddir = "/distfiles"
 	exclude = yes
       }
       File = /home
