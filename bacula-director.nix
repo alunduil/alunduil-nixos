@@ -29,7 +29,6 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
-    Max Run Sched Time = 8 hours
   }
 
   Job {
@@ -64,7 +63,6 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
-    Max Run Sched Time = 8 hours
   }
 
   Job {
@@ -75,7 +73,6 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
-    Max Run Sched Time = 8 hours
   }
 
   Job {
@@ -95,6 +92,7 @@
     Pool = USB-RAID
     Schedule = DAILY
     Max Start Delay = 6 hours
+    Max Run Sched Time = 8 hours
     Max Full Interval = 7 days
     Prefer Mounted Volumes = yes
     Cancel Lower Level Duplicates = yes
