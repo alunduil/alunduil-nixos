@@ -146,9 +146,10 @@
 	fstype = ext4
 	fstype = btrfs
 
-	wilddir = "/tmp"
-	wilddir = "/lost+found"
-	wilddir = "/distfiles"
+	wilddir = "*/tmp"
+	wilddir = "*/lost+found"
+	wilddir = "*/distfiles"
+	wilddir = "*/paludis/repositories"
 	exclude = yes
       }
       File = /
@@ -166,8 +167,8 @@
         aclsupport = yes
         xattrsupport = yes
 
-	wilddir = "/tmp"
-	wilddir = "/lost+found"
+	wilddir = "*/tmp"
+	wilddir = "*/lost+found"
 	exclude = yes
       }
       File = /home
@@ -185,7 +186,7 @@
 	aclsupport = yes
 	xattrsupport = yes
 
-	wilddir = "/lost+found"
+	wilddir = "*/lost+found"
 	exclude = yes
       }
       File = /media/gladia/scanned
