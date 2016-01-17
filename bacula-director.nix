@@ -66,6 +66,16 @@
   }
 
   Job {
+    Name = MAIL-sherlock.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = sherlock.alunduil.com
+    FileSet = MAIL
+    Messages = Standard
+    Enabled = yes
+    Priority = 5
+  }
+
+  Job {
     Name = HOME-sherlock.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = sherlock.alunduil.com
@@ -138,17 +148,17 @@
         aclsupport = yes
         xattrsupport = yes
 
-	onefs = no
+	      onefs = no
 
-	fstype = rootfs
-	fstype = ext4
-	fstype = btrfs
+	      fstype = rootfs
+	      fstype = ext4
+	      fstype = btrfs
 
-	wilddir = "*/tmp"
-	wilddir = "*/lost+found"
-	wilddir = "*/distfiles"
-	wilddir = "*/paludis/repositories"
-	exclude = yes
+	      wilddir = "*/tmp"
+	      wilddir = "*/lost+found"
+	      wilddir = "*/distfiles"
+	      wilddir = "*/paludis/repositories"
+	      exclude = yes
       }
       File = /
     }
@@ -165,11 +175,30 @@
         aclsupport = yes
         xattrsupport = yes
 
-	wilddir = "*/tmp"
-	wilddir = "*/lost+found"
-	exclude = yes
+	      wilddir = "*/tmp"
+	      wilddir = "*/lost+found"
+	      exclude = yes
       }
       File = /home
+    }
+  }
+
+  FileSet {
+    Name = MAIL
+    Include {
+      Options {
+        compression = GZIP
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
+
+        wilddir = "*/tmp"
+        wilddir = "*/lost+found"
+        exclude = yes
+      }
+      File = /var/spool/mail
     }
   }
 
@@ -178,14 +207,14 @@
     Include {
       Options {
         compression = GZIP
-	signature = SHA1
-	noatime = yes
-	checkfilechanges = yes
-	aclsupport = yes
-	xattrsupport = yes
+	      signature = SHA1
+	      noatime = yes
+	      checkfilechanges = yes
+	      aclsupport = yes
+	      xattrsupport = yes
 
-	wilddir = "*/lost+found"
-	exclude = yes
+	      wilddir = "*/lost+found"
+	      exclude = yes
       }
       File = /media/gladia/scanned
       File = /media/gladia/media
