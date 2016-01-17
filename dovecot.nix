@@ -7,7 +7,7 @@
   services.dovecot2.enableImap = true;
   services.dovecto2.enablePop3 = false;
 
-  services.dovecto2.extraConfig = ''
+  services.dovecot2.extraConfig = ''
   listen = *
   '';
 }
