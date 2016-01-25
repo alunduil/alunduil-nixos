@@ -4,7 +4,7 @@
   imports = [];
 
   networking.firewall.extraCommands = ''
-  ip46tables -A nixos-fw -s 64.68.174.57 -p tcp --dport 9102 -j nixos-fw-accept
+  ip46tables -A nixos-fw -s 64.68.174.54 -p tcp --dport 9102 -j nixos-fw-accept
   '';
 
   boot.kernel.sysctl = {
