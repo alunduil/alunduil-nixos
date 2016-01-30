@@ -162,6 +162,9 @@
       }
       File = /
     }
+    Exclude {
+      File = /var/lib/docker
+    }
   }
 
   FileSet {
