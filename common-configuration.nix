@@ -3,6 +3,7 @@
 {
   imports = [
     ./common-boot.nix
+    ./common-monitoring.nix
     ./common-networking.nix
     ./common-services.nix
     ./common-users.nix
