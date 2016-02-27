@@ -53,6 +53,7 @@
     Schedule = NEVER
     Priority = 7
     Cancel Queued Duplicates = yes
+    Max Full Interval = 1 quarter
   }
 
   Job {
