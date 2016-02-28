@@ -53,6 +53,8 @@
     Schedule = NEVER
     Priority = 7
     Cancel Queued Duplicates = yes
+    Max Start Delay = 0
+    Max Run Sched Time = 0
     Max Full Interval = 1 quarter
   }
 
