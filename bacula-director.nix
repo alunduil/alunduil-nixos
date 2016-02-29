@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./datadog-postgresql.nix
-  ];
+  imports = [];
 
   networking.firewall.allowedTCPPorts = [ 9103 ];
 
