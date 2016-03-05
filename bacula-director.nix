@@ -22,7 +22,7 @@
 
   services.bacula-dir.extraConfig = ''
   Job {
-    Name = FULL-giskard.alunduil.com
+    Name = EVERYTHING-giskard.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = giskard.alunduil.com
     FileSet = EVERYTHING
@@ -32,7 +32,7 @@
   }
 
   Job {
-    Name = FULL-elijah.laptops.alunduil.com
+    Name = EVERYTHING-elijah.laptops.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
     FileSet = EVERYTHING
