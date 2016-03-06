@@ -14,8 +14,8 @@
   '';
 
   services.bacula-dir.extraMessagesConfig = ''
-  MailCommand = "bsmtp -h localhost -f \"%d \<root@${config.networking.hostName}\>\" -s \"Bacula—%l %n %e\" %r"
-  OperatorCommand = "bsmtp -h localhost -f \"%d \<root@${config.networking.hostName}\>\" -s \"Bacula—Intervation needed for %j\" %r"
+  MailCommand = "bsmtp -h localhost -f \"%d \<root@${config.networking.hostName}\>\" -s \"[BACULA] %l %n %e\" %r"
+  OperatorCommand = "bsmtp -h localhost -f \"%d \<root@${config.networking.hostName}\>\" -s \"[BACULA] Intervation needed for %j\" %r"
   mail = root = all, !skipped, !restored
   operator = root = mount
   '';
@@ -222,9 +222,9 @@
 	      wilddir = "*/lost+found"
 	      exclude = yes
       }
-      File = /media/gladia/scanned
-      File = /media/gladia/media
       File = /media/gladia/documents
+      File = /media/gladia/media
+      File = /media/gladia/scanned
     }
   }
 
