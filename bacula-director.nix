@@ -151,17 +151,18 @@
         aclsupport = yes
         xattrsupport = yes
 
-	      onefs = no
+        onefs = no
 
-	      fstype = rootfs
-	      fstype = ext4
-	      fstype = btrfs
+        fstype = rootfs
+        fstype = btrfs
+        fstype = ext4
+        fstype = vfat
 
-	      wilddir = "*/tmp"
-	      wilddir = "*/lost+found"
-	      wilddir = "*/distfiles"
-	      wilddir = "*/paludis/repositories"
-	      exclude = yes
+        wilddir = "*/tmp"
+        wilddir = "*/lost+found"
+        wilddir = "*/distfiles"
+        wilddir = "*/paludis/repositories"
+        exclude = yes
       }
       File = /
     }
@@ -181,9 +182,9 @@
         aclsupport = yes
         xattrsupport = yes
 
-	      wilddir = "*/tmp"
-	      wilddir = "*/lost+found"
-	      exclude = yes
+        wilddir = "*/tmp"
+        wilddir = "*/lost+found"
+        exclude = yes
       }
       File = /home
     }
@@ -213,14 +214,14 @@
     Include {
       Options {
         compression = GZIP
-	      signature = SHA1
-	      noatime = yes
-	      checkfilechanges = yes
-	      aclsupport = yes
-	      xattrsupport = yes
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
 
-	      wilddir = "*/lost+found"
-	      exclude = yes
+        wilddir = "*/lost+found"
+        exclude = yes
       }
       File = /media/gladia/documents
       File = /media/gladia/media
