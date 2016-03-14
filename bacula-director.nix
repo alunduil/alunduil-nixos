@@ -32,6 +32,17 @@
   }
 
   Job {
+    Name = PARTITIONS-giskard.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = giskard.alunduil.com
+    FileSet = PARTITIONS
+    Messages = Standard
+    Enabled = yes
+    Priority = 5
+    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
+  }
+
+  Job {
     Name = EVERYTHING-elijah.laptops.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
@@ -44,10 +55,10 @@
   }
 
   Job {
-    Name = GLADIA-elijah.laptops.alunduil.com
+    Name = NAS-DOCUMENTS-elijah.laptops.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
-    FileSet = GLADIA
+    FileSet = NAS-DOCUMENTS
     Messages = Standard
     Enabled = yes
     Schedule = NEVER
@@ -59,6 +70,47 @@
   }
 
   Job {
+    Name = NAS-MEDIA-elijah.laptops.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = elijah.laptops.alunduil.com
+    FileSet = NAS-MEDIA
+    Messages = Standard
+    Enabled = yes
+    Schedule = NEVER
+    Priority = 7
+    Cancel Queued Duplicates = yes
+    Max Start Delay = 0
+    Max Run Sched Time = 0
+    Max Full Interval = 1 quarter
+  }
+
+  Job {
+    Name = NAS-SCANNED-elijah.laptops.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = elijah.laptops.alunduil.com
+    FileSet = NAS-SCANNED
+    Messages = Standard
+    Enabled = yes
+    Schedule = NEVER
+    Priority = 7
+    Cancel Queued Duplicates = yes
+    Max Start Delay = 0
+    Max Run Sched Time = 0
+    Max Full Interval = 1 quarter
+  }
+
+  Job {
+    Name = PARTITIONS-elijah.laptops.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = elijah.laptops.alunduil.com
+    FileSet = PARTITIONS
+    Messages = Standard
+    Enabled = yes
+    Priority = 5
+    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
+  }
+
+  Job {
     Name = HOME-mycroft.alunduil.com
     JobDefs = BACKUP-DEFAULTS
     Client = mycroft.alunduil.com
@@ -66,6 +118,17 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
+  }
+
+  Job {
+    Name = PARTITIONS-mycroft.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = mycroft.alunduil.com
+    FileSet = PARTITIONS
+    Messages = Standard
+    Enabled = yes
+    Priority = 5
+    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
   }
 
   Job {
@@ -86,6 +149,17 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
+  }
+
+  Job {
+    Name = PARTITIONS-mycroft.alunduil.com
+    JobDefs = BACKUP-DEFAULTS
+    Client = mycroft.alunduil.com
+    FileSet = PARTITIONS
+    Messages = Standard
+    Enabled = yes
+    Priority = 5
+    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
   }
 
   Job {
@@ -172,6 +246,21 @@
   }
 
   FileSet {
+    Name = PARTITIONS
+    Include {
+      Options {
+        compression = GZIP
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
+      }
+      File = /partitions.txt
+    }
+  }
+
+  FileSet {
     Name = HOME
     Include {
       Options {
@@ -210,7 +299,7 @@
   }
 
   FileSet {
-    Name = GLADIA
+    Name = NAS-DOCUMENTS
     Include {
       Options {
         compression = GZIP
@@ -224,7 +313,41 @@
         exclude = yes
       }
       File = /media/gladia/documents
+    }
+  }
+
+  FileSet {
+    Name = NAS-MEDIA
+    Include {
+      Options {
+        compression = GZIP
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
+
+        wilddir = "*/lost+found"
+        exclude = yes
+      }
       File = /media/gladia/media
+    }
+  }
+
+  FileSet {
+    Name = NAS-SCANNED
+    Include {
+      Options {
+        compression = GZIP
+        signature = SHA1
+        noatime = yes
+        checkfilechanges = yes
+        aclsupport = yes
+        xattrsupport = yes
+
+        wilddir = "*/lost+found"
+        exclude = yes
+      }
       File = /media/gladia/scanned
     }
   }
