@@ -106,7 +106,9 @@
     FileSet = PARTITIONS
     Messages = Standard
     Enabled = yes
-    Priority = 5
+    Schedule = NEVER
+    Priority = 3
+    Cancel Queued Duplicates = yes
     Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
   }
 
