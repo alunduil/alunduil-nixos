@@ -152,9 +152,9 @@
   }
 
   Job {
-    Name = PARTITIONS-mycroft.alunduil.com
+    Name = PARTITIONS-sherlock.alunduil.com
     JobDefs = BACKUP-DEFAULTS
-    Client = mycroft.alunduil.com
+    Client = sherlock.alunduil.com
     FileSet = PARTITIONS
     Messages = Standard
     Enabled = yes
