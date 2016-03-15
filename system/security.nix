@@ -4,4 +4,4 @@
   imports = [];
 
   security.sudo.wheelNeedsPassword = false;
-};
+}
