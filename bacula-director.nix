@@ -39,7 +39,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 5
-    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
   }
 
   Job {
@@ -109,7 +109,7 @@
     Schedule = NEVER
     Priority = 3
     Cancel Queued Duplicates = yes
-    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
   }
 
   Job {
@@ -130,7 +130,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 5
-    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
   }
 
   Job {
@@ -161,7 +161,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 5
-    Client Run Before Job = "sfdisk -d /dev/?d? > /partitions.txt"
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
   }
 
   Job {
