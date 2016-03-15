@@ -22,17 +22,6 @@
 
   services.bacula-dir.extraConfig = ''
   Job {
-    Name = giskard.alunduil.com-PARTITIONS
-    JobDefs = BACKUP-DEFAULTS
-    Client = giskard.alunduil.com
-    FileSet = PARTITIONS
-    Messages = Standard
-    Enabled = yes
-    Priority = 5
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
-  }
-
-  Job {
     Name = giskard.alunduil.com-EVERYTHING
     JobDefs = BACKUP-DEFAULTS
     Client = giskard.alunduil.com
@@ -40,19 +29,6 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
-  }
-
-  Job {
-    Name = elijah.laptops.alunduil.com-PARTITIONS
-    JobDefs = BACKUP-DEFAULTS
-    Client = elijah.laptops.alunduil.com
-    FileSet = PARTITIONS
-    Messages = Standard
-    Enabled = yes
-    Schedule = NEVER
-    Priority = 3
-    Cancel Queued Duplicates = yes
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   }
 
   Job {
@@ -113,17 +89,6 @@
   }
 
   Job {
-    Name = mycroft.alunduil.com-PARTITONS
-    JobDefs = BACKUP-DEFAULTS
-    Client = mycroft.alunduil.com
-    FileSet = PARTITIONS
-    Messages = Standard
-    Enabled = yes
-    Priority = 5
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
-  }
-
-  Job {
     Name = mycroft.alunduil.com-HOME
     JobDefs = BACKUP-DEFAULTS
     Client = mycroft.alunduil.com
@@ -131,17 +96,6 @@
     Messages = Standard
     Enabled = yes
     Priority = 10
-  }
-
-  Job {
-    Name = sherlock.alunduil.com-PARTITIONS
-    JobDefs = BACKUP-DEFAULTS
-    Client = sherlock.alunduil.com
-    FileSet = PARTITIONS
-    Messages = Standard
-    Enabled = yes
-    Priority = 5
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   }
 
   Job {
@@ -244,21 +198,6 @@
     }
     Exclude {
       File = /var/lib/docker
-    }
-  }
-
-  FileSet {
-    Name = PARTITIONS
-    Include {
-      Options {
-        compression = GZIP
-        signature = SHA1
-        noatime = yes
-        checkfilechanges = yes
-        aclsupport = yes
-        xattrsupport = yes
-      }
-      File = /partitions.txt
     }
   }
 
