@@ -2,9 +2,8 @@
 
 {
   imports = [
-    ./common-configuration.nix
-    ./dovecot.nix
-    ./simple-mail.nix
+    ../system.nix
+    ../services/mail/dovecot.nix
   ];
 
   hardware.cpu.amd.updateMicrocode = true;

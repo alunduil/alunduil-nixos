@@ -2,11 +2,10 @@
 
 {
   imports = [
-    ./common-configuration.nix
-    ./bacula-director.nix
-    ./bacula-sd.nix
-    ./laptop-backups.nix
-    ./simple-mail.nix
+    ../system.nix
+    ../services/backups/bacula-dir.nix
+    ../services/backups/bacula-sd.nix
+    ../services/backups/laptops.nix
   ];
 
   hardware.cpu.amd.updateMicrocode = true;

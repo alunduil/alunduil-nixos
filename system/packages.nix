@@ -3,8 +3,8 @@
 {
   imports = [];
 
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
+  programs.zsh.enable = true;
+
   environment.systemPackages = with pkgs; [
     git
     htop

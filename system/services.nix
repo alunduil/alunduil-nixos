@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./bacula-fd.nix
+    ./backups.nix
+    ./mail.nix
+    ./monitoring.nix
   ];
 
   services.acpid.enable = true;
