@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     git
     htop
+    sfdisk
     vim
   ];
 }
