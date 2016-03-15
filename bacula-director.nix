@@ -22,7 +22,18 @@
 
   services.bacula-dir.extraConfig = ''
   Job {
-    Name = EVERYTHING-giskard.alunduil.com
+    Name = giskard.alunduil.com-PARTITIONS
+    JobDefs = BACKUP-DEFAULTS
+    Client = giskard.alunduil.com
+    FileSet = PARTITIONS
+    Messages = Standard
+    Enabled = yes
+    Priority = 5
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
+  }
+
+  Job {
+    Name = giskard.alunduil.com-EVERYTHING
     JobDefs = BACKUP-DEFAULTS
     Client = giskard.alunduil.com
     FileSet = EVERYTHING
@@ -32,18 +43,20 @@
   }
 
   Job {
-    Name = PARTITIONS-giskard.alunduil.com
+    Name = elijah.laptops.alunduil.com-PARTITIONS
     JobDefs = BACKUP-DEFAULTS
-    Client = giskard.alunduil.com
+    Client = elijah.laptops.alunduil.com
     FileSet = PARTITIONS
     Messages = Standard
     Enabled = yes
-    Priority = 5
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
+    Schedule = NEVER
+    Priority = 3
+    Cancel Queued Duplicates = yes
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   }
 
   Job {
-    Name = EVERYTHING-elijah.laptops.alunduil.com
+    Name = elijah.laptops.alunduil.com-EVERYTHING
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
     FileSet = EVERYTHING
@@ -55,7 +68,7 @@
   }
 
   Job {
-    Name = NAS-DOCUMENTS-elijah.laptops.alunduil.com
+    Name = elijah.laptops.alunduil.com-NAS-DOCUMENTS
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
     FileSet = NAS-DOCUMENTS
@@ -70,7 +83,7 @@
   }
 
   Job {
-    Name = NAS-MEDIA-elijah.laptops.alunduil.com
+    Name = elijah.laptops.alunduil.com-NAS-MEDIA
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
     FileSet = NAS-MEDIA
@@ -85,7 +98,7 @@
   }
 
   Job {
-    Name = NAS-SCANNED-elijah.laptops.alunduil.com
+    Name = elijah.laptops.alunduil.com-NAS-SCANNED
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
     FileSet = NAS-SCANNED
@@ -100,20 +113,18 @@
   }
 
   Job {
-    Name = PARTITIONS-elijah.laptops.alunduil.com
+    Name = mycroft.alunduil.com-PARTITONS
     JobDefs = BACKUP-DEFAULTS
-    Client = elijah.laptops.alunduil.com
+    Client = mycroft.alunduil.com
     FileSet = PARTITIONS
     Messages = Standard
     Enabled = yes
-    Schedule = NEVER
-    Priority = 3
-    Cancel Queued Duplicates = yes
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
+    Priority = 5
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   }
 
   Job {
-    Name = HOME-mycroft.alunduil.com
+    Name = mycroft.alunduil.com-HOME
     JobDefs = BACKUP-DEFAULTS
     Client = mycroft.alunduil.com
     FileSet = HOME
@@ -123,45 +134,34 @@
   }
 
   Job {
-    Name = PARTITIONS-mycroft.alunduil.com
+    Name = sherlock.alunduil.com-PARTITIONS
     JobDefs = BACKUP-DEFAULTS
-    Client = mycroft.alunduil.com
+    Client = sherlock.alunduil.com
     FileSet = PARTITIONS
     Messages = Standard
     Enabled = yes
     Priority = 5
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
+    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   }
 
   Job {
-    Name = MAIL-sherlock.alunduil.com
+    Name = sherlock.alunduil.com-HOME
+    JobDefs = BACKUP-DEFAULTS
+    Client = sherlock.alunduil.com
+    FileSet = HOME
+    Messages = Standard
+    Enabled = yes
+    Priority = 10
+  }
+
+  Job {
+    Name = sherlock.alunduil.com-MAIL
     JobDefs = BACKUP-DEFAULTS
     Client = sherlock.alunduil.com
     FileSet = MAIL
     Messages = Standard
     Enabled = yes
     Priority = 5
-  }
-
-  Job {
-    Name = HOME-sherlock.alunduil.com
-    JobDefs = BACKUP-DEFAULTS
-    Client = sherlock.alunduil.com
-    FileSet = HOME
-    Messages = Standard
-    Enabled = yes
-    Priority = 10
-  }
-
-  Job {
-    Name = PARTITIONS-sherlock.alunduil.com
-    JobDefs = BACKUP-DEFAULTS
-    Client = sherlock.alunduil.com
-    FileSet = PARTITIONS
-    Messages = Standard
-    Enabled = yes
-    Priority = 5
-    Client Run Before Job = "for d in /dev/?d?; do sfdisk -d ${d}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g > /partitions.txt'
   }
 
   Job {
