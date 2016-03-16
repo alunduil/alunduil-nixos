@@ -8,7 +8,7 @@
   '';
 
   services.cron.systemCronJobs = [
-    "29 5 1 * * for D in /dev/?d?; do sfdisk -d ${D}; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
+    "29 5 1 * * for D in /dev/?d?; do sfdisk -d $D; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   ];
 
   boot.kernel.sysctl = {
