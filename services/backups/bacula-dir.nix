@@ -22,16 +22,6 @@
 
   services.bacula-dir.extraConfig = ''
   Job {
-    Name = giskard.alunduil.com-EVERYTHING
-    JobDefs = BACKUP-DEFAULTS
-    Client = giskard.alunduil.com
-    FileSet = EVERYTHING
-    Messages = Standard
-    Enabled = yes
-    Priority = 10
-  }
-
-  Job {
     Name = elijah.laptops.alunduil.com-EVERYTHING
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
@@ -44,13 +34,13 @@
   }
 
   Job {
-    Name = elijah.laptops.alunduil.com-NAS-DOCUMENTS
+    Name = home.alunduil.com-NAS-DOCUMENTS
     JobDefs = BACKUP-DEFAULTS
-    Client = elijah.laptops.alunduil.com
+    Client = home.alunduil.com
     FileSet = NAS-DOCUMENTS
     Messages = Standard
     Enabled = yes
-    Schedule = NEVER
+    Schedule = WEEKLY
     Priority = 7
     Cancel Queued Duplicates = yes
     Max Start Delay = 0
@@ -59,13 +49,13 @@
   }
 
   Job {
-    Name = elijah.laptops.alunduil.com-NAS-MEDIA
+    Name = home.alunduil.com-NAS-MEDIA
     JobDefs = BACKUP-DEFAULTS
-    Client = elijah.laptops.alunduil.com
+    Client = home.alunduil.com
     FileSet = NAS-MEDIA
     Messages = Standard
     Enabled = yes
-    Schedule = NEVER
+    Schedule = WEEKLY
     Priority = 7
     Cancel Queued Duplicates = yes
     Max Start Delay = 0
@@ -74,18 +64,28 @@
   }
 
   Job {
-    Name = elijah.laptops.alunduil.com-NAS-SCANNED
+    Name = home.alunduil.com-NAS-SCANNED
     JobDefs = BACKUP-DEFAULTS
-    Client = elijah.laptops.alunduil.com
+    Client = home.alunduil.com
     FileSet = NAS-SCANNED
     Messages = Standard
     Enabled = yes
-    Schedule = NEVER
+    Schedule = WEEKLY
     Priority = 7
     Cancel Queued Duplicates = yes
     Max Start Delay = 0
     Max Run Sched Time = 0
     Max Full Interval = 1 quarter
+  }
+
+  Job {
+    Name = giskard.alunduil.com-EVERYTHING
+    JobDefs = BACKUP-DEFAULTS
+    Client = giskard.alunduil.com
+    FileSet = EVERYTHING
+    Messages = Standard
+    Enabled = yes
+    Priority = 10
   }
 
   Job {
@@ -152,6 +152,13 @@
   Client {
     Name = giskard.alunduil.com
     Address = giskard.alunduil.com
+    Catalog = PostgreSQL
+    Password = "998da8a46eaa434e8be8ff7fc877cf94"
+  }
+
+  Client {
+    Name = home.alunduil.com
+    Address = home.alunduil.com
     Catalog = PostgreSQL
     Password = "998da8a46eaa434e8be8ff7fc877cf94"
   }
@@ -300,6 +307,11 @@
   Schedule {
     Name = DAILY
     Run = daily at 23:05
+  }
+
+  Schedule {
+    Name = WEEKLY
+    Run = fri at 23:05
   }
 
   Schedule {
