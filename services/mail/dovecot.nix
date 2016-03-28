@@ -3,6 +3,8 @@
 {
   imports = [];
 
+  services.dd-agent.tags = [ "dovecot" ];
+
   networking.firewall.allowedTCPPorts = [ 143 ];
 
   services.dovecot2.enable = true;

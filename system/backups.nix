@@ -3,6 +3,8 @@
 {
   imports = [];
 
+  services.dd-agent.tags = [ "bacula-fd" ];
+
   networking.firewall.extraCommands = ''
   ip46tables -A nixos-fw -s 64.68.174.54 -p tcp --dport 9102 -j nixos-fw-accept
   '';

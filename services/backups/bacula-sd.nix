@@ -3,6 +3,8 @@
 {
   imports = [];
 
+  services.dd-agent.tags = [ "bacula-sd" ];
+
   services.bacula-sd.enable = true;
   services.bacula-sd.name = config.networking.hostName + "-sd";
 

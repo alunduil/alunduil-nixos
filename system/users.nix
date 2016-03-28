@@ -3,6 +3,8 @@
 {
   imports = [];
 
+  services.dd-agent.tags = [ "alunduil" ];
+
   users.mutableUsers = false;
 
   users.users = {

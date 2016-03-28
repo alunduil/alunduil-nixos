@@ -3,6 +3,8 @@
 {
   imports = [];
 
+  services.dd-agent.tags = [ "bacula-dir" ];
+
   networking.firewall.allowedTCPPorts = [ 9103 ];
 
   services.bacula-dir.enable = true;
