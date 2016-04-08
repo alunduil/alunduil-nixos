@@ -43,7 +43,7 @@
     Messages = Standard
     Enabled = yes
     Schedule = WEEKLY
-    Priority = 7
+    Priority = 6
     Cancel Queued Duplicates = yes
     Max Start Delay = 0
     Max Run Sched Time = 0
@@ -73,7 +73,7 @@
     Messages = Standard
     Enabled = yes
     Schedule = WEEKLY
-    Priority = 7
+    Priority = 6
     Cancel Queued Duplicates = yes
     Max Start Delay = 0
     Max Run Sched Time = 0
