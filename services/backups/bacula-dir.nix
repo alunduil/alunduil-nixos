@@ -316,7 +316,7 @@
 
   Schedule {
     Name = WEEKLY
-    Run = fri at 23:05
+    Run = fri at 8:00
   }
 
   Schedule {
