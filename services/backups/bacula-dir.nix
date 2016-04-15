@@ -80,7 +80,7 @@
     Max Start Delay = 0
     Max Run Sched Time = 0
     Max Full Interval = 1 quarter
-    Client Run Before Job = "ls /media/gladia/media"
+    Client Run Before Job = "ls /media/gladia/scanned"
   }
 
   Job {
