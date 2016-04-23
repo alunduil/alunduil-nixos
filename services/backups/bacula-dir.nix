@@ -166,6 +166,7 @@
     Address = home.alunduil.com
     Catalog = PostgreSQL
     Password = "998da8a46eaa434e8be8ff7fc877cf94"
+    File Retention = 1 quarter
   }
 
   Client {
