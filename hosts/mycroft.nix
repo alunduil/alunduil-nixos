@@ -8,6 +8,11 @@
     ../services/backups/laptops.nix
   ];
 
+  boot.loader.grub.devices = [
+    "/dev/disk/by-id/ata-WDC_WD800JD-75MSA3_WD-WMAM9DLZ6740"
+    "/dev/disk/by-id/ata-WDC_WD800JD-75MSA3_WD-WMAM9DLS6552"
+  ];
+
   hardware.cpu.amd.updateMicrocode = true;
 
   time.timeZone = "America/Chicago";

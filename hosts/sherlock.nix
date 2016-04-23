@@ -6,6 +6,11 @@
     ../services/mail/dovecot.nix
   ];
 
+  boot.loader.grub.devices = [
+    "/dev/disk/by-id/ata-WDC_WD800JD-60LSA5_WD-WMAM9EV35606"
+    "/dev/disk/by-id/ata-WDC_WD800JD-60LSA5_WD-WMAM9EV35973"
+  ];
+
   hardware.cpu.amd.updateMicrocode = true;
 
   time.timeZone = "America/Chicago";
