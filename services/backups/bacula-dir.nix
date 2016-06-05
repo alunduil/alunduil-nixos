@@ -5,6 +5,8 @@
 
   services.dd-agent.tags = [ "bacula-dir" ];
 
+  services.postgresql.package = pkgs.postgresql94;
+
   networking.firewall.allowedTCPPorts = [ 9103 ];
 
   services.bacula-dir.enable = true;
