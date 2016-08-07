@@ -39,34 +39,24 @@
 
   Job {
     Name = home.alunduil.com-NAS-DOCUMENTS
-    JobDefs = BACKUP-DEFAULTS
+    JobDefs = NAS-DEFAULTS
     Client = home.alunduil.com
     FileSet = NAS-DOCUMENTS
     Messages = Standard
     Enabled = yes
-    Schedule = WEEKLY
     Priority = 6
-    Cancel Queued Duplicates = yes
-    Max Start Delay = 0
-    Max Run Sched Time = 0
-    Max Full Interval = 1 quarter
-    Client Run Before Job = "ls /media/gladia/documents"
+    Client Run Before Job = "sh -c \"ls /media/gladia/documents >/dev/null 2>&1\""
   }
 
   Job {
     Name = home.alunduil.com-NAS-MEDIA
-    JobDefs = BACKUP-DEFAULTS
+    JobDefs = NAS-DEFAULTS
     Client = home.alunduil.com
     FileSet = NAS-MEDIA
     Messages = Standard
     Enabled = yes
-    Schedule = WEEKLY
     Priority = 7
-    Cancel Queued Duplicates = yes
-    Max Start Delay = 0
-    Max Run Sched Time = 0
-    Max Full Interval = 1 quarter
-    Client Run Before Job = "ls /media/gladia/media"
+    Client Run Before Job = "sh -c \"ls /media/gladia/media >/dev/null 2>&1\""
   }
 
   Job {
@@ -76,13 +66,8 @@
     FileSet = NAS-SCANNED
     Messages = Standard
     Enabled = yes
-    Schedule = WEEKLY
     Priority = 6
-    Cancel Queued Duplicates = yes
-    Max Start Delay = 0
-    Max Run Sched Time = 0
-    Max Full Interval = 1 quarter
-    Client Run Before Job = "ls /media/gladia/scanned"
+    Client Run Before Job = "sh -c \"ls /media/gladia/scanned >/dev/null 2>&1\""
   }
 
   Job {
@@ -146,6 +131,21 @@
     Max Full Interval = 7 days
     Prefer Mounted Volumes = yes
     Cancel Lower Level Duplicates = yes
+  }
+
+  JobDefs {
+    Name = NAS-DEFAULTS
+    Type = Backup
+    Level = Differential
+    Accurate = yes
+    Pool = USB-RAID
+    Schedule = WEEKLY
+    Max Start Delay = 0
+    Max Run Sched Time = 3 days
+    Max Full Interval = 1 quarter
+    Prefer Mounted Volumes = yes
+    Cancel Lower Level Duplicates = yes
+    Cancel Queued Duplicates = yes
   }
 
   Client {
