@@ -61,7 +61,7 @@
 
   Job {
     Name = home.alunduil.com-NAS-SCANNED
-    JobDefs = BACKUP-DEFAULTS
+    JobDefs = NAS-DEFAULTS
     Client = home.alunduil.com
     FileSet = NAS-SCANNED
     Messages = Standard
