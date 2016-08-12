@@ -45,7 +45,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 6
-    Client Run Before Job = "/bin/sh -c ls /media/gladia/documents >/dev/null"
+    Client Run Before Job = "/bin/sh -c 'ls /media/gladia/documents >/dev/null'"
   }
 
   Job {
@@ -56,7 +56,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 7
-    Client Run Before Job = "/bin/sh -c ls /media/gladia/media >/dev/null"
+    Client Run Before Job = "/bin/sh -c 'ls /media/gladia/media >/dev/null'"
   }
 
   Job {
@@ -67,7 +67,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 6
-    Client Run Before Job = "/bin/sh -c ls /media/gladia/scanned >/dev/null"
+    Client Run Before Job = "/bin/sh -c 'ls /media/gladia/scanned >/dev/null'"
   }
 
   Job {
