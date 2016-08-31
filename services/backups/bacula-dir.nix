@@ -230,6 +230,7 @@
         wilddir = "*/lost+found"
         wilddir = "*/paludis/repositories"
         wilddir = "*/tmp"
+        wilddir = "/var/log"
         exclude = yes
       }
       File = /
