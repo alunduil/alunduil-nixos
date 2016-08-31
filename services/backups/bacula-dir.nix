@@ -45,7 +45,7 @@
     Messages = Standard
     Enabled = yes
     Schedule = NEVER
-    Priority = 5
+    Priority = 6
     Cancel Queued Duplicates = yes
   }
 
@@ -99,7 +99,7 @@
     FileSet = EVERYTHING
     Messages = Standard
     Enabled = yes
-    Priority = 10
+    Priority = 11
   }
 
   Job {
