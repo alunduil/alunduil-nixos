@@ -207,6 +207,7 @@
         wilddir = "*/lost+found"
         wilddir = "*/distfiles"
         wilddir = "*/paludis/repositories"
+        wilddir = "/home/*/.cache"
         exclude = yes
       }
       File = /
