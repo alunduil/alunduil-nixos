@@ -26,6 +26,18 @@
 
   services.bacula-dir.extraConfig = ''
   Job {
+    Name = elijah.laptops.alunduil.com-HOME
+    JobDefs = BACKUP-DEFAULTS
+    Client = elijah.laptops.alunduil.com
+    FileSet = HOME
+    Messages = Standard
+    Enabled = yes
+    Schedule = NEVER
+    Priority = 5
+    Cancel Queued Duplicates = yes
+  }
+
+  Job {
     Name = elijah.laptops.alunduil.com-EVERYTHING
     JobDefs = BACKUP-DEFAULTS
     Client = elijah.laptops.alunduil.com
@@ -68,6 +80,16 @@
     Enabled = yes
     Priority = 6
     Client Run Before Job = "/bin/sh -c 'ls /media/gladia/scanned >/dev/null'"
+  }
+
+  Job {
+    Name = giskard.alunduil.com-HOME
+    JobDefs = BACKUP-DEFAULTS
+    Client = giskard.alunduil.com
+    FileSet = HOME
+    Messages = Standard
+    Enabled = yes
+    Priority = 10
   }
 
   Job {
@@ -203,11 +225,11 @@
         fstype = ext4
         fstype = vfat
 
-        wilddir = "*/tmp"
-        wilddir = "*/lost+found"
         wilddir = "*/distfiles"
+        wilddir = "/home"
+        wilddir = "*/lost+found"
         wilddir = "*/paludis/repositories"
-        wilddir = "/home/*/.cache"
+        wilddir = "*/tmp"
         exclude = yes
       }
       File = /
@@ -228,8 +250,9 @@
         aclsupport = yes
         xattrsupport = yes
 
-        wilddir = "*/tmp"
+        wilddir = "*/.cache"
         wilddir = "*/lost+found"
+        wilddir = "*/tmp"
         exclude = yes
       }
       File = /home
