@@ -231,6 +231,7 @@
         wilddir = "*/paludis/repositories"
         wilddir = "*/tmp"
         wilddir = "/usr/portage"
+        wilddir = "/var/cache"
         wilddir = "/var/log"
         exclude = yes
       }
