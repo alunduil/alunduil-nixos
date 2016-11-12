@@ -12,6 +12,9 @@
   services.cron.systemCronJobs = [
     "29 5 1 * * for D in /dev/?d?; do sfdisk -d $D; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
   ];
+  services.fcron.systab = ''
+  &runatreboot,runonce(true) * * * * * for D in /dev/?d?; do sfdisk -d $D; done 2>/dev/null | sed -e 's/label: gpt/\n&/g' > /partitions.txt"
+  '';
 
   boot.kernel.sysctl = {
     "net.ipv4.tcp_keepalive_time" = 30;

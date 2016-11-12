@@ -29,6 +29,22 @@
   programs.zsh.enable = true;
   environment.shells = [ "${pkgs.zsh}/bin/zsh" ];
 
+  environment.etc = {
+    bacula_bconsole_conf = {
+      enable = true;
+      mode = "0660";
+      target = "bacula/bconsole.conf";
+      text = ''
+      Director {
+        Name = "mycroft.alunduil.com-dir";
+        Address = localhost;
+        DIR Port = 19101;
+        Password = "998da8a46eaa434e8be8ff7fc877cf94";
+      }
+      '';
+    };
+  };
+
   environment.sessionVariables = {
     EDITOR = "vim";
     NIXPKGS_ALLOW_UNFREE = "1";
@@ -61,14 +77,27 @@
   services.acpid.enable = true;
   services.upower.enable = true;
   services.pcscd.enable = true;
+  services.cron.enable = false;
+  services.fcron.enable = true;
 
   services.dd-agent.tags = [ "alunduil" ];
 
+
+  services.postfix.mapFiles."sasl_passwords" = pkgs.writeText "postfix-sasl-passwords" ''
+  mail.alunduil.com alunduil:tigerrose07
+  '';
+
+  services.postfix.domain = "alunduil.com";
+  services.postfix.origin = "$mydomain";
   services.postfix.extraConfig = ''
     smtp_sasl_auth_enable = yes
-    smtp_sasl_password_maps = regexp:/var/lib/postfix/conf/sasl_passwords
+    smtp_sasl_password_maps = hash:/var/lib/postfix/conf/sasl_passwords
     smtp_sasl_security_options = noanonymous
   '';
+
+  services.redshift.enable = true;
+  services.redshift.latitude = "29.5835150";
+  services.redshift.longitude = "-98.4140820";
 
   services.xserver = {
     enable = true;
@@ -77,8 +106,8 @@
     synaptics = {
       enable = true;
       minSpeed = "0.1";
-      maxSpeed = "4.0";
-      accelFactor = "0.4";
+      maxSpeed = "0.8";
+      accelFactor = "0.6";
 
       tapButtons = false;
       palmDetect = true;
@@ -90,7 +119,7 @@
 
     displayManager = {
       slim = {
-        enable = true;
+        enable = false;
         autoLogin = false;
         defaultUser = "alunduil";
         theme = pkgs.fetchurl {
@@ -98,6 +127,8 @@
           sha256 = "0b123706ccb67e94f626c183530ec5732b209bab155bc661d6a3f5cd5ee39511";
         };
       };
+
+      lightdm.enable = true;
 
       sessionCommands = ''
         ${pkgs.compton}/bin/compton -b &
