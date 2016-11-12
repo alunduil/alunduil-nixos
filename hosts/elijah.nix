@@ -43,6 +43,15 @@
       }
       '';
     };
+    cifs_credentials = {
+      enable = true;
+      mode = "0600";
+      target = "cifs.credentials";
+      text = ''
+      username=alunduil
+      password=Objectivism
+      '';
+    };
   };
 
   environment.sessionVariables = {
@@ -51,6 +60,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    cifs-utils
     chromium
     compton
     dmenu
@@ -73,6 +83,48 @@
     wgetpaste
     xautolock
   ] ++ (with python27Packages; [ docker_compose goobook udiskie ]);
+
+  fileSystems = {
+    "/media/gladia/documents" = {
+      device = "//gladia.home.alunduil.com/Documents";
+      fsType = "cifs";
+      options = [
+        "credentials=/etc/cifs.credentials"
+        "gid=users"
+        "noauto"
+        "uid=alunduil"
+        "x-systemd.automount"
+        "x-systemd.device-timeout=10s"
+        "x-systemd.idle-timeout=300s"
+      ];
+    };
+    "/media/gladia/media" = {
+      device = "//gladia.home.alunduil.com/Media";
+      fsType = "cifs";
+      options = [
+        "credentials=/etc/cifs.credentials"
+        "gid=users"
+        "noauto"
+        "uid=alunduil"
+        "x-systemd.automount"
+        "x-systemd.device-timeout=10s"
+        "x-systemd.idle-timeout=300s"
+      ];
+    };
+    "/media/gladia/scanned" = {
+      device = "//gladia.home.alunduil.com/Scanned";
+      fsType = "cifs";
+      options = [
+        "credentials=/etc/cifs.credentials"
+        "gid=users"
+        "noauto"
+        "uid=alunduil"
+        "x-systemd.automount"
+        "x-systemd.device-timeout=10s"
+        "x-systemd.idle-timeout=300s"
+      ];
+    };
+  };
 
   services.acpid.enable = true;
   services.upower.enable = true;
@@ -118,17 +170,10 @@
     };
 
     displayManager = {
-      slim = {
-        enable = false;
-        autoLogin = false;
-        defaultUser = "alunduil";
-        theme = pkgs.fetchurl {
-          url = "mirror://sourceforge/slim.berlios/slim-rear-window.tar.gz";
-          sha256 = "0b123706ccb67e94f626c183530ec5732b209bab155bc661d6a3f5cd5ee39511";
-        };
+      sddm = {
+        enable = true;
+        theme = "maui";
       };
-
-      lightdm.enable = true;
 
       sessionCommands = ''
         ${pkgs.compton}/bin/compton -b &
