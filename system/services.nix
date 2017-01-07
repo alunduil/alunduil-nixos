@@ -5,6 +5,7 @@
     ./backups.nix
     ./mail.nix
     ./monitoring.nix
+    ./services/cron.nix
     ./services/smart.nix
   ];
 

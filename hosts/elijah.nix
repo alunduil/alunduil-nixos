@@ -5,6 +5,7 @@
     ../system/backups.nix
     ../system/mail.nix
     ../system/monitoring.nix
+    ../system/services/cron.nix
     ../system/services/smart.nix
     ../system/updating.nix
   ];
@@ -15,6 +16,8 @@
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
   };
+
+  boot.tmpOnTmpfs = true;
 
   time.timeZone = "America/Chicago";
 
@@ -60,20 +63,23 @@
   };
 
   environment.systemPackages = with pkgs; [
-    cifs-utils
     chromium
+    cifs-utils
     compton
     dmenu
     git
     gnupg
+    hplip
     htop
     iotop
     irssi
     lsof
+    lynx
     mutt
     ncdu
     pavucontrol
     pciutils
+    rxvt_unicode
     slock
     tmux
     tree
@@ -129,11 +135,8 @@
   services.acpid.enable = true;
   services.upower.enable = true;
   services.pcscd.enable = true;
-  services.cron.enable = false;
-  services.fcron.enable = true;
 
   services.dd-agent.tags = [ "alunduil" ];
-
 
   services.postfix.mapFiles."sasl_passwords" = pkgs.writeText "postfix-sasl-passwords" ''
   mail.alunduil.com alunduil:tigerrose07
@@ -150,6 +153,13 @@
   services.redshift.enable = true;
   services.redshift.latitude = "29.5835150";
   services.redshift.longitude = "-98.4140820";
+  services.redshift.temperature.day = 6500;
+  services.redshift.temperature.night = 1500;
+
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplip ];
+  };
 
   services.xserver = {
     enable = true;
@@ -172,7 +182,7 @@
     displayManager = {
       sddm = {
         enable = true;
-        theme = "maui";
+        theme = "maldives";
       };
 
       sessionCommands = ''
