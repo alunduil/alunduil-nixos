@@ -4,7 +4,7 @@
   imports = [];
 
   nix.gc.automatic = true;
-  nix.useChroot = true;
+  nix.useSandbox = true;
 
   system.autoUpgrade.enable = true;
 
