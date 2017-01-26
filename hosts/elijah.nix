@@ -91,8 +91,8 @@
   ] ++ (with python27Packages; [ docker_compose goobook udiskie ]);
 
   fileSystems = {
-    "/media/gladia/documents" = {
-      device = "//gladia.home.alunduil.com/Documents";
+    "/media/nas/documents" = {
+      device = "//nas/Documents";
       fsType = "cifs";
       options = [
         "credentials=/etc/cifs.credentials"
@@ -104,8 +104,8 @@
         "x-systemd.idle-timeout=300s"
       ];
     };
-    "/media/gladia/media" = {
-      device = "//gladia.home.alunduil.com/Media";
+    "/media/nas/media" = {
+      device = "//nas/Media";
       fsType = "cifs";
       options = [
         "credentials=/etc/cifs.credentials"
@@ -117,8 +117,8 @@
         "x-systemd.idle-timeout=300s"
       ];
     };
-    "/media/gladia/scanned" = {
-      device = "//gladia.home.alunduil.com/Scanned";
+    "/media/nas/scanned" = {
+      device = "//nas/Scanned";
       fsType = "cifs";
       options = [
         "credentials=/etc/cifs.credentials"
