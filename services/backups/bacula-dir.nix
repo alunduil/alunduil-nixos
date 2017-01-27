@@ -57,7 +57,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 6
-    Client Run Before Job = "/bin/sh -c 'ls /media/gladia/documents >/dev/null'"
+    Client Run Before Job = "/bin/sh -c 'ls /media/nas/documents >/dev/null'"
   }
 
   Job {
@@ -68,7 +68,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 7
-    Client Run Before Job = "/bin/sh -c 'ls /media/gladia/media >/dev/null'"
+    Client Run Before Job = "/bin/sh -c 'ls /media/nas/media >/dev/null'"
   }
 
   Job {
@@ -79,7 +79,7 @@
     Messages = Standard
     Enabled = yes
     Priority = 6
-    Client Run Before Job = "/bin/sh -c 'ls /media/gladia/scanned >/dev/null'"
+    Client Run Before Job = "/bin/sh -c 'ls /media/nas/scanned >/dev/null'"
   }
 
   Job {
@@ -295,7 +295,7 @@
         wilddir = "*/lost+found"
         exclude = yes
       }
-      File = /media/gladia/documents
+      File = /media/nas/documents
     }
   }
 
@@ -313,7 +313,7 @@
         wilddir = "*/lost+found"
         exclude = yes
       }
-      File = /media/gladia/media
+      File = /media/nas/media
     }
   }
 
@@ -331,7 +331,7 @@
         wilddir = "*/lost+found"
         exclude = yes
       }
-      File = /media/gladia/scanned
+      File = /media/nas/scanned
     }
   }
 
