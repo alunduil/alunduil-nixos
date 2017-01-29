@@ -63,26 +63,19 @@
   };
 
   environment.systemPackages = with pkgs; [
-    chromium
     cifs-utils
     compton
     dmenu
-    git
-    gnupg
     hplip
     htop
     iotop
-    irssi
     lsof
-    lynx
-    mutt
     ncdu
     pavucontrol
     pciutils
     rxvt_unicode
     slock
     tmux
-    tree
     unclutter
     vim
     wget
