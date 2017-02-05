@@ -182,7 +182,7 @@
         ${pkgs.compton}/bin/compton -b &
         ${pkgs.python27Packages.udiskie}/bin/udiskie &
         ${pkgs.unclutter}/bin/unclutter -root -visible -idle 2 &
-        ${pkgs.xautolock}/bin/xautolock -time 3 -locker slock &
+        ${pkgs.xautolock}/bin/xautolock -time 3 -locker /var/setuid-wrappers/slock &
       '';
     };
 
