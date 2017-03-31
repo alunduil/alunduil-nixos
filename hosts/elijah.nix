@@ -77,11 +77,16 @@
     slock
     tmux
     unclutter
+    usbutils
     vim
     wget
     wgetpaste
     xautolock
-  ] ++ (with python27Packages; [ docker_compose goobook udiskie ]);
+  ] ++ (with python27Packages; [
+    docker_compose
+    goobook
+    udiskie
+  ]);
 
   fileSystems = {
     "/media/nas/documents" = {
@@ -209,6 +214,8 @@
       shell = "/run/current-system/sw/bin/zsh";
     };
   };
+
+  virtualisation.virtualbox.host.enable = true;
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
