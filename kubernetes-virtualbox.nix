@@ -1,27 +1,15 @@
 let 
+  hostNames = import ./kubernetes-hostnames.nix;
+
+  node =
+    { hostName, ... }:
+    { networking.hostName = hostName;
+    } // odroid-vm;
+
   odroid-vm =
     { deployment.targetEnv = "virtualbox";
       deployment.virtualbox.memorySize = 2048;
       deployment.virtualbox.headless = true;
     };
-
 in
-
-{ demeter  = { networking.hostName = "demeter";
-             } // odroid-vm;
-
-  hades    = { networking.hostName = "hades";
-             } // odroid-vm;
-
-  hera     = { networking.hostName = "hera";
-             } // odroid-vm;
-
-  hestia   = { networking.hostName = "hestia";
-             } // odroid-vm;
-
-  poseidon = { networking.hostName = "poseidon";
-             } // odroid-vm;
-
-  zeus     = { networking.hostName = "zeus";
-             } // odroid-vm;
-}
+  builtins.listToAttrs (builtins.map (h: { name = h; value = (node { hostName = h; }); }) hostNames)

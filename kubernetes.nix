@@ -1,5 +1,13 @@
 let
-  etcd = import ./services/etcd.nix;
+  hostNames = import ./kubernetes-hostnames.nix;
+
+  node = etcd;
+
+  etcd = 
+    { ... }: 
+    { imports = [ ./services/etcd.nix ];
+      services.etcd.initialCluster = builtins.map (h: "${h}=http://${h}:2380") hostNames;
+    };
 
   kubernetesNode = 
     { config, pkgs, ... }:
@@ -12,15 +20,6 @@ let
       services.kubernetes.roles = [ "master" "node" ];
       virtualisation.docker.extraOptions = ''--iptables=false --ip-masq=false =b cbr0'';
     };
-
 in
-
-{ network.description = "Kubernetes Cluster";
-
-  demeter  = etcd;
-  hades    = etcd;
-  hera     = etcd;
-  hestia   = etcd;
-  poseidon = etcd;
-  zeus     = etcd;
-}
+  { network.description = "Kubernetes Cluster";
+  } // builtins.listToAttrs (builtins.map (h: { name = h; value = node; }) hostNames)
