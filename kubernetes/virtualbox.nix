@@ -1,5 +1,5 @@
 let 
-  hostNames = import ./kubernetes-hostnames.nix;
+  hostNames = import ./hostnames.nix;
 
   node =
     { hostName, ... }:

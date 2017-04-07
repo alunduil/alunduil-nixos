@@ -1,11 +1,11 @@
 let
-  hostNames = import ./kubernetes-hostnames.nix;
+  hostNames = import ./hostnames.nix;
 
   node = etcd;
 
   etcd = 
     { ... }: 
-    { imports = [ ./services/etcd.nix ];
+    { imports = [ ../services/etcd.nix ];
       services.etcd.initialCluster = builtins.map (h: "${h}=http://${h}:2380") hostNames;
     };
 
