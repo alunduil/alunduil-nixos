@@ -12,4 +12,4 @@ let
       deployment.virtualbox.headless = true;
     };
 in
-  builtins.listToAttrs (builtins.map (h: { name = h; value = (node { hostName = h; }); }) hostNames)
+  builtins.listToAttrs (map (h: { name = h; value = (node { hostName = h; }); }) hostNames)

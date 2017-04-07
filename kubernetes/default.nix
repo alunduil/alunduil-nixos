@@ -6,7 +6,7 @@ let
   etcd = 
     { ... }: 
     { imports = [ ../services/etcd.nix ];
-      services.etcd.initialCluster = builtins.map (h: "${h}=http://${h}:2380") hostNames;
+      services.etcd.initialCluster = map (h: "${h}=http://${h}:2380") hostNames;
     };
 
   kubernetesNode = 
@@ -22,4 +22,4 @@ let
     };
 in
   { network.description = "Kubernetes Cluster";
-  } // builtins.listToAttrs (builtins.map (h: { name = h; value = node; }) hostNames)
+  } // builtins.listToAttrs (map (h: { name = h; value = node; }) hostNames)
