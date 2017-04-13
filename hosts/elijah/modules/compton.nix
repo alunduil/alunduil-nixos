@@ -1,0 +1,3 @@
+{ ... }:
+{ services.compton.enable = true;
+}
