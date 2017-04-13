@@ -1,0 +1,9 @@
+init_config:
+
+instances:
+  - directory: /var/spool/mail
+    queues:
+      - active
+      - deferred
+      - incoming
+    tags: []

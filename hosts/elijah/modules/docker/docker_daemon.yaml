@@ -1,0 +1,5 @@
+init_config:
+
+instances:
+  - uri: "unix://var/run/docker.sock"
+    new_tag_names: true
