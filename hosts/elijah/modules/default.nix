@@ -1,10 +1,11 @@
 { ... }:
 { imports =
     [ ./bacula
+      ./btrfs
       ./cifs
       ./compton.nix
       ./datadog.nix
-      ./docker.nix
+      ./docker
       ./postfix
       ./printing.nix
       ./redshift.nix
