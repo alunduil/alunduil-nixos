@@ -1,0 +1,5 @@
+init_config:
+
+instances:
+  - url: "https://localhost:2379"
+    timeout: 5
