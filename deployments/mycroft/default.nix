@@ -1,3 +1,4 @@
 { network.description = "mycroft.alunduil.com";
-  mycroft = import ../..;
+
+  mycroft = import ../../hosts/mycroft;
 }

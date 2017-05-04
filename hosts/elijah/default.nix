@@ -22,7 +22,7 @@
     [ pkgs.pavucontrol
       pkgs.python27Packages.docker_compose
       pkgs.python27Packages.goobook
-      pkgs.tmux  # See programs.tmux.enable
+      pkgs.tmux  # TODO programs.tmux.enable
     ];
 
   fonts = {
