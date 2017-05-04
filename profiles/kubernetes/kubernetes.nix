@@ -5,9 +5,9 @@
 
   services.kubernetes =
     { kubeconfig =
-        { caFile = null;
-          certFile = null;
-          keyFile = null;
+        { caFile = ../../certificates/alunduil-ca.pem;
+          certFile = ../../certificates/cronus-proxy.pem;
+          keyFile = ../../certificates/cronus-proxy-key.pem;
         };
 
       kubelet =
