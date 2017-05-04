@@ -1,14 +1,15 @@
 { ... }:
 { imports =
-    [ ../../system.nix
-      ../../users/perniferuse.nix 
+    [ ./etcd.nix
+      ./kubernetes.nix
+      ../../profiles/kubernetes
+      ../../system.nix
     ];
 
   environment.noXlibs = true;
 
   networking =
-    { domain = "alunduil.com";
-      hostName = "sherlock";
+    { hostName = "demeter";
     };
 
   sound.enable = false;

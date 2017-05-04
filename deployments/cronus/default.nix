@@ -1,12 +1,11 @@
-{ cardinality ? 2 }:
-let
-  hostNames = import ./hostNames.nix cardinality;
+{ network.description = "cronus.alunduil.com";
+  
+  cronus   = import ../../hosts/cronus;
 
-  node = import ./hosts/node hostNames;
-
-  nodes = map (h: { name = h; value = node; }) hostNames;
-in
-  { network.description = "Kubernetes Cluster";
-    
-    cronus = import ./hosts/cronus hostNames;
-  } // builtins.listToAttrs nodes
+  demeter  = import ../../hosts/demeter;
+  hades    = import ../../hosts/hades;
+  hera     = import ../../hosts/hera;
+  hestia   = import ../../hosts/hestia;
+  poseidon = import ../../hosts/poseidon;
+  zeus     = import ../../hosts/zeus;
+}

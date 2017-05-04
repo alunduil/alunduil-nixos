@@ -1,11 +1,11 @@
 { ... }:
 { imports =
-    [ ../../../../services/docker
+    [ ../../services/docker
     ];
 
   networking =
     { bridges.cbr0.interfaces = [];
-      
+
       interfaces =
         { "cbr0" =
             { ipAddress = "10.10.0.1";
@@ -22,5 +22,5 @@
           "--iptables=false"
         ];
     in
-      builtins.concatStringsSep " " options;
+      builtins.concatStringSep " " options;
 }

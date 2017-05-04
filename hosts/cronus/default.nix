@@ -1,14 +1,13 @@
 { ... }:
 { imports =
-    [ ../../system.nix
-      ../../users/perniferuse.nix 
+    [ nginx
+      ../../system.nix
     ];
 
   environment.noXlibs = true;
 
   networking =
-    { domain = "alunduil.com";
-      hostName = "sherlock";
+    { hostName = "cronus";
     };
 
   sound.enable = false;
