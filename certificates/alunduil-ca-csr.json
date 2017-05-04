@@ -1,0 +1,16 @@
+{
+    "CN": "alunduil",
+    "key": {
+        "algo": "rsa",
+        "size": 4096
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "Austin",
+            "O": "alunduil",
+            "OU": "CA",
+            "ST": "Texas"
+        }
+    ]
+}
