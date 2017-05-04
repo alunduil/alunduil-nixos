@@ -6,10 +6,14 @@
       ../../system.nix
     ];
 
+  environment.noXlibs = true;
+
   networking =
     { domain = "alunduil.com";
       hostName = "mycroft";
     };
+
+  sound.enable = false;
 
   time.timeZone = "America/Chicago";
 

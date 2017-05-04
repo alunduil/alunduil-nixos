@@ -5,11 +5,13 @@
 
   environment.noXlibs = true;
 
-  services.dd-agent.tags =
-    [ "cronus"
-    ];
+  networking =
+    { hostName = "poseidon";
+    };
 
   sound.enable = false;
+
+  time.timeZone = "America/Chicago";
 
   users.mutableUsers = false;
 }

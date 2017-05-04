@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 { services.dd-agent.tags =
     [ "kubernetes"
     ];
@@ -8,7 +8,6 @@
         { caFile = null;
           certFile = null;
           keyFile = null;
-          server = "http://cronus";
         };
 
       kubelet =

@@ -4,7 +4,7 @@
         { source = ./nginx.yaml;
         };
     };
-    
+
   networking.firewall.allowedTCPPorts = [ 80 ];
 
   services.dd-agent.tags =
@@ -12,7 +12,8 @@
     ];
 
   services.nginx =
-    { enable = true;
+    { config = builtins.readFile ./nginx.conf;
+      enable = true;
       statusPage = true;
     };
 }

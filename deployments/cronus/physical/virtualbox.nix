@@ -1,15 +1,8 @@
-{ cardinality ? 2 }:
 let
-  hostNames = import ../hostNames.nix cardinality;
-
-  node =
-    hostName:
-    { networking.hostName = hostName;
-    } // odroid-vm;
-
   odroid-vm =
+    common //
     { deployment.virtualbox.memorySize = 2048;
-    } // common;
+    };
 
   common =
     { deployment =
@@ -18,14 +11,21 @@ let
         };
         
       services.dd-agent.tags =
-        [ "virtualbox"
+        [ "cronus"
+          "virtualbox"
           "virtualbox-guest"
         ];
     };
 in
-  { cronus =
-      { networking.hostName = "cronus";
+{ cronus =
+    common //
+    { deployment.virtualbox.memorySize = 256;
+    };
 
-        deployment.virtualbox.memorySize = 256;
-      } // common;
-  } // builtins.listToAttrs (map (h: { name = h; value = (node h); }) hostNames)
+  demeter  = odroid-vm;
+  hades    = odroid-vm;
+  hera     = odroid-vm;
+  hestia   = odroid-vm;
+  poseidon = odroid-vm;
+  zeus     = odroid-vm;
+}
