@@ -1,8 +1,7 @@
 let
   odroid-vm =
-    common //
     { deployment.virtualbox.memorySize = 2048;
-    };
+    } // common;
 
   common =
     { deployment =
@@ -18,9 +17,8 @@ let
     };
 in
 { cronus =
-    common //
     { deployment.virtualbox.memorySize = 256;
-    };
+    } // common;
 
   demeter  = odroid-vm;
   hades    = odroid-vm;

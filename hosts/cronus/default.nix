@@ -1,6 +1,6 @@
 { ... }:
 { imports =
-    [ nginx
+    [ ./nginx
       ../../system.nix
     ];
 

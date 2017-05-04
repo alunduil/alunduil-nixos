@@ -12,16 +12,24 @@
 
   services.etcd =
     { advertiseClientUrls =
-        [ ("http://" + config.networking.hostName + ":2379")
+        [ ("https://" + config.networking.hostName + ":2379")
         ];
+      certFile = ../../certificates/cronus-kubernetes.pem;
+      clientCertAuth = true;
+      keyFile = ../../certificates/cronus-kubernetes-key.pem;
       enable = true;
       listenClientUrls =
-        [ ("http://" + config.networking.hostName + ":2379")
-          "http://localhost:2379"
+        [ ("https://" + config.networking.hostName + ":2379")
+          "https://localhost:2379"
         ];
       listenPeerUrls =
-        [ ("http://" + config.networking.hostName + ":2380")
+        [ ("https://" + config.networking.hostName + ":2380")
         ];
+      peerCertFile = ../../certificates/cronus-kubernetes.pem;
+      peerClientCertAuth = true;
+      peerKeyFile = ../../certificates/cronus-kubernetes-key.pem;
+      peerTrustedCaFile = ../../certificates/alunduil-ca.pem;
+      trustedCaFile = ../../certificates/alunduil-ca.pem;
     };
 
   services.dd-agent.tags =
