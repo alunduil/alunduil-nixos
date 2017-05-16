@@ -14,6 +14,7 @@
       ./udiskie.nix
       ./unclutter.nix
       ./urxvtd.nix
+      ./upower.nix
       ./virtualbox.nix
       ./xserver.nix
     ];
