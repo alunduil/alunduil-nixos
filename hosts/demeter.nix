@@ -1,8 +1,6 @@
 { ... }:
 { imports =
-    [ ./etcd.nix
-      ./kubernetes.nix
-      ../../profiles/kubernetes
+    [ ../../profiles/cronus
       ../../system.nix
     ];
 
