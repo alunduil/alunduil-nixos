@@ -1,7 +1,7 @@
 { ... }:
 { imports =
-    [ ../../profiles/fates
-      ../../system.nix
+    [ ../profiles/fates
+      ../system.nix
     ];
 
   environment.noXlibs = true;
