@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 { services.dd-agent.tags =
     [ "kubernetes"
     ];
