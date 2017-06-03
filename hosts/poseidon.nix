@@ -1,6 +1,7 @@
 { ... }:
 { imports =
-    [ ../../system.nix
+    [ ../../profiles/cronus
+      ../../system.nix
     ];
 
   environment.noXlibs = true;
