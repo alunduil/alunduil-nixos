@@ -13,7 +13,7 @@
       apiserver =
         { kubeletClientCaFile = ../../certificates/alunduil-ca.pem;
           kubeletClientCertFile = ../../certificates/kubernetes.pem;
-          kubeletClientClientKey = ../../certificates/kubernetes-key.pem;
+          kubeletClientKey = ../../certificates/kubernetes-key.pem;
         };
 
       kubeconfig.server = "http://fates";
