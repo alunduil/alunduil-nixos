@@ -11,26 +11,21 @@
     ];
 
   services.etcd =
-    { advertiseClientUrls =
-        [ ("https://" + config.networking.hostName + ":2379")
-        ];
-      certFile = ../../certificates/cronus-kubernetes.pem;
-      clientCertAuth = true;
-      keyFile = ../../certificates/cronus-kubernetes-key.pem;
-      enable = true;
-      listenClientUrls =
-        [ ("https://" + config.networking.hostName + ":2379")
-          "https://localhost:2379"
-        ];
-      listenPeerUrls =
-        [ ("https://" + config.networking.hostName + ":2380")
-        ];
-      peerCertFile = ../../certificates/cronus-kubernetes.pem;
-      peerClientCertAuth = true;
-      peerKeyFile = ../../certificates/cronus-kubernetes-key.pem;
-      peerTrustedCaFile = ../../certificates/alunduil-ca.pem;
-      trustedCaFile = ../../certificates/alunduil-ca.pem;
-    };
+    let clientScheme = "http" + (if config.services.etcd.certFile then "s" else "") + "://";
+        peerScheme = "http" + (if config.services.etcd.peerCertFile then "s" else "") + "://";
+    in
+      { advertiseClientUrls =
+          [ (clientScheme + config.networking.hostName + ":2379")
+          ];
+        enable = true;
+        listenClientUrls =
+          [ (clientScheme + config.networking.hostName + ":2379")
+            (clientScheme + "localhost:2379")
+          ];
+        listenPeerUrls =
+          [ (peerScheme + config.networking.hostName + ":2380")
+          ];
+      };
 
   services.dd-agent.tags =
     [ "etcd"
