@@ -22,5 +22,5 @@
           "--iptables=false"
         ];
     in
-      builtins.concatStringSep " " options;
+      builtins.concatStringsSep " " options;
 }
