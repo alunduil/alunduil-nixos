@@ -1,19 +1,32 @@
-CERT_EXPIRE_DAYS = "365"
+CA_PREFIX	 := ca
+CA		 := $(CA_PREFIX).pem
+CA_KEY		 := $(CA_PREFIX).key
+CA_SRL           := $(CA_PREFIX).srl
 
-generate-certs: fates-san fates-cert
+CERTIFICATES     = etcd etcd-peer kubernetes-etcd kubelet-client kubernetes-proxy
+SSL_CONF         = openssl.conf
+DEFAULT_BITS     = 4096
+EXPIRE_DAYS      = 10000
 
-fates-san: rootca.pem
-	for service in etcd etcd-peer kubernetes-etcd; \
-	  do openssl req -x509 -nodes -days ${CERT_EXPIRE_DAYS} -newkey rsa:2048 -keyout $$service.key -out $$service.pem -config san-req.conf -extensions 'v3_req'; \
-	done
+.PHONY: clean
+clean:
+	rm -f $(CERTIFICATES:%=%.csr) $(CERTIFICATES:%=%.key) $(CERTIFICATES:%=%.pem)
+	rm -f $(CA_KEY) $(CA) $(CA_SRL)
 
-fates-cert: rootca.pem
-	for service in kubelet-client kubernetes-proxy; \
-	  do openssl req -x509 -nodes -days ${CERT_EXPIRE_DAYS} -newkey rsa:2048 -keyout $$service.key -out $$service.pem -subj "/CN=fates"; \
-	done
+.PHONY: certificates
+certificates: $(CERTIFICATES:%=%.key) $(CERTIFICATES:%=%.pem)
 
-rootca.pem: rootca.key
-	openssl req -x509 -new -nodes -key ca.key -days 10000 -out ca.pem -subj "/CN=fates-ca"
+%.pem: %.csr %.key $(CA) $(CA_KEY)
+	openssl x509 -days $(EXPIRE_DAYS) -in $< -out $@ -CA $(CA) -CAkey $(CA_KEY) -CAcreateserial -req -extfile $(SSL_CONF) -extensions 'v3_req'
 
-rootca.key:
-	openssl genrsa -out ca.key 4096
+%.csr: %.key
+	openssl req -key $< -new -out $@ -config $(SSL_CONF)
+
+%.key:
+	openssl genrsa -out $@ $(DEFAULT_BITS)
+
+$(CA): $(CA_KEY)
+	openssl req -x509 -days $(EXPIRE_DAYS) -new -nodes -key $< -out $@ -config $(SSL_CONF)
+
+$(CA_KEY):
+	openssl genrsa -out $@ $(DEFAULT_BITS)
