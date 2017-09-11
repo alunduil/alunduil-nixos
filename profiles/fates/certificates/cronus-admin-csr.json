@@ -1,0 +1,17 @@
+{
+    "CN": "cronus.admin",
+    "hosts": [],
+    "key": {
+        "algo": "rsa",
+        "size": 4096
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "Austin",
+            "O": "cronus",
+            "OU": "admin",
+            "ST": "Texas"
+        }
+    ]
+}

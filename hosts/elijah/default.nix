@@ -1,22 +1,28 @@
 { config, pkgs, ... }:
 { imports =
-    [ ./modules
-      ./common.nix
+    [ ./bacula-fd
+      ./btrfs
+      ./cifs
+      ./chromecast.nix
+      ./docker.nix
+      ./postfix
+      ./printing.nix
+      ./redshift.nix
+      ./slock.nix
+      ../../system.nix
+      ./udiskie.nix
+      ./unclutter.nix
+      ./urxvtd.nix
+      ./upower.nix
+      ./virtualbox.nix
+      ./xserver.nix
     ];
 
   environment.systemPackages =
-    [ pkgs.htop
-      pkgs.iotop
-      pkgs.lsof
-      pkgs.ncdu
-      pkgs.pavucontrol
-      pkgs.pciutils
+    [ pkgs.pavucontrol
       pkgs.python27Packages.docker_compose
       pkgs.python27Packages.goobook
-      pkgs.tmux  # See programs.tmux.enable
-      pkgs.usbutils
-      pkgs.wget
-      pkgs.wgetpaste
+      pkgs.tmux  # TODO programs.tmux.enable
     ];
 
   fonts = {

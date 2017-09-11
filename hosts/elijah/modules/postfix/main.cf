@@ -1,3 +1,0 @@
-smtp_sasl_auth_enable = true;
-smtp_sasl_password_maps = hash:/var/lib/postfix/conf/sasl_passwords
-smtp_sasl_security_options = noanonymous
