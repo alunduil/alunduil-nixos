@@ -58,7 +58,7 @@
       cron =
         { enable = false;
           systemCronJobs =
-            [ "%nightly,random * * nix-env --delete-generations 364d"
+            [ "%nightly,random * * nix-collect-garbage --delete-older-than 180d"
             ];
         };
 

@@ -5,7 +5,7 @@
       redshift =
         { enable = true;
           extraOptions =
-            [ # "-l geoclue2"
+            [ "-m randr"
             ];
 
           latitude = "30.269095";

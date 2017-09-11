@@ -3,3 +3,7 @@ ca.pem: ca.key
 
 ca.key:
 	openssl genrsa -out ca.key 4096
+
+.PHONY: clean
+clean:
+	rm -f *.key *.csr *.pem

@@ -1,12 +1,12 @@
 { ... }:
 { boot.loader.grub.devices =
-    [ "/dev/disk/by-id/ata-WDC_WD800JD-60LSA5_WD-WMAM9EV35606"
+    [ "/dev/disk/by-id/ata-ST9120822AS_5LZ5FBBK"
       "/dev/disk/by-id/ata-WDC_WD800JD-60LSA5_WD-WMAM9EV35973"
     ];
 
   fileSystems =
     { "/var/spool/mail" =
-        { device = "/dev/disk/by-uuid/ec8312c4-20b0-4689-af8c-8df30fc4abb1";
+        { device = "/dev/disk/by-uuid/52594154-56ad-4dd6-ba90-1cb5f6984e28";
           fsType = "ext4";
           neededForBoot = true;
         };
