@@ -4,7 +4,6 @@
       ./btrfs
       ./cifs
       ./chromecast.nix
-      ./compton.nix
       ./docker.nix
       ./postfix
       ./printing.nix

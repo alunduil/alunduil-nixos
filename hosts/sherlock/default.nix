@@ -1,6 +1,7 @@
 { ... }:
 { imports =
-    [ ../../system.nix
+    [ ../../services/openssh.nix
+      ../../system.nix
       ../../users/perniferuse.nix 
     ];
 

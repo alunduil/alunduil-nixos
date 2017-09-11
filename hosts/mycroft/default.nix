@@ -3,6 +3,7 @@
     [ ./bacula-dir
       ./bacula-sd.nix
       ../../services/bacula-fd.nix
+      ../../services/openssh.nix
       ../../system.nix
     ];
 
