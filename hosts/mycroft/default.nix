@@ -3,8 +3,11 @@
     [ ./bacula-dir
       ./bacula-sd.nix
       ../../services/bacula-fd.nix
+      ../../services/datadog.nix
       ../../services/openssh.nix
       ../../services/postfix
+      ../../services/smartd.nix
+      ../../services/uptimed.nix
       #../../system.nix
       ../../users/alunduil.nix
     ];
