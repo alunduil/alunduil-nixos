@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 { boot.loader.grub.devices =
     [ "/dev/disk/by-id/ata-WDC_WD800JD-75MSA3_WD-WMAM9DLZ6740"
       "/dev/disk/by-id/ata-WDC_WD800JD-75MSA3_WD-WMAM9DLS6552"
@@ -34,7 +34,7 @@
     { defaultGateway = "64.68.174.1";
 
       interfaces =
-        { "enp0s7" =
+        { "enp0s7".ip4 =
             [ { address = "64.68.174.54";
                 prefixLength = 24;
               }
