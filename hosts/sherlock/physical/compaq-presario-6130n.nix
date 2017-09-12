@@ -18,7 +18,7 @@
     { defaultGateway = "64.68.174.1";
 
       interfaces =
-        { "enp0s7" =
+        { "enp0s7".ip4 =
             [ { address = "64.68.174.56";
                 prefixLength = 24;
               }
