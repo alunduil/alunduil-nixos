@@ -1,0 +1,1 @@
+compaq-presario-6000n.nix

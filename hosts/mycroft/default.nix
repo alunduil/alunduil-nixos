@@ -1,11 +1,17 @@
 { pkgs, ... }:
 { imports =
-    [ ./services/datadog.nix
-      ./services/smartd.nix
-      ./services/uptimed.nix
-      ./users/alunduil.nix
+    [ ./bacula-dir
+      ./bacula-sd.nix
+      ../../services/bacula-fd.nix
+      ../../services/datadog.nix
+      ../../services/openssh.nix
+      ../../services/postfix
+      ../../services/smartd.nix
+      ../../services/uptimed.nix
+      #../../system.nix
+      ../../users/alunduil.nix
     ];
-    
+
   boot.tmpOnTmpfs = true;
 
   environment =
@@ -20,35 +26,29 @@
           pkgs.nethogs
           pkgs.pciutils
           pkgs.usbutils
+          pkgs.vim
           pkgs.wget
           pkgs.wgetpaste
         ];
       
       variables =
-        { NIXPKGS_ALLOW_UNFREE = "1";
+        { EDITOR = "vim";
+          NIXPKGS_ALLOW_UNFREE = "1";
         };
+
+      noXlibs = true;
     };
 
   nix =
-    { autoOptimiseStore = true;
-      gc.automatic = true;
-      optimise.automatic = true;
-      useSandbox = true;
+    { gc.automatic = true;
+      useChroot = true;
     };
 
   nixpkgs.config.allowUnfree = true;
 
   programs =
-    { vim.defaultEditor = true;
-
-      zsh.enable = true;
+    { zsh.enable = true;
     };
-
-/* TODO
-  security.apparmor.enable = true;
-  security.audit.enable = true;
-  security.grsecurity.enable = true;
-*/
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -59,6 +59,7 @@
         { enable = false;
           systemCronJobs =
             [ "%nightly,random * * nix-collect-garbage --delete-older-than 180d"
+              "%nightly,random * * nix-store --optimise"
             ];
         };
 
@@ -66,4 +67,18 @@
     };
 
   system.autoUpgrade.enable = true;
+
+  networking =
+    { domain = "alunduil.com";
+      hostName = "mycroft";
+    };
+
+  sound.enable = false;
+
+  time.timeZone = "America/Chicago";
+
+  users =
+    { mutableUsers = false;
+      users.alunduil.shell = pkgs.lib.mkForce "/run/current-system/sw/bin/zsh";
+    };
 }
