@@ -2,7 +2,7 @@
 { imports =
     [ ../../services/bacula-fd.nix
       ../../services/openssh.nix
-      ../../services/postfix.nix
+      ../../services/postfix
       ../../system.nix
       ../../users/perniferuse.nix 
     ];
