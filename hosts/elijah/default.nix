@@ -42,6 +42,7 @@
   };
 
   networking = {
+    domain = "laptops.alunduil.com";
     hostName = "elijah";
 
     networkmanager.enable = true;
