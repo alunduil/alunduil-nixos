@@ -18,7 +18,7 @@
         }
         { name = config.services.bacula-sd.device."USB-RAID".archiveDevice;
           value =
-            { device = "/dev/disk/by-uuid/834d4738-7843-4d98-9c98-70efc31dc6f0";
+            { device = "/dev/disk/by-uuid/8ecf60d1-8450-46c7-b171-b7eb5c4b2ade";
               fsType = "ext4";
               neededForBoot = true;
               options =
