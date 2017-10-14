@@ -1,6 +1,6 @@
 { ... }:
 { imports =
-    [ ../../services/bacula-fd.nix
+    [ ./bacula-fd.nix
       ../../services/openssh.nix
       ../../services/postfix
       ../../system.nix
