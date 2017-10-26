@@ -4,11 +4,7 @@
     ];
       
   services.xserver =
-    { displayManager =
-        { job.logsXsession = true;
-
-          sddm.enable = true;
-        };
+    { displayManager.sddm.enable = true;
 
       enable = true;
 
