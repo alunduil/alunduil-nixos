@@ -6,7 +6,6 @@
       ./chromecast.nix
       ./docker.nix
       ./postfix
-      ./printing.nix
       ./redshift.nix
       ./slock.nix
       ../../system.nix
