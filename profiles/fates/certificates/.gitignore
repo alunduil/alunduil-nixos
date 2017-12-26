@@ -1,3 +1,4 @@
+*.csr
 *.key
-*.srl
 *.pem
+*.srl

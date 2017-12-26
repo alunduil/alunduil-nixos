@@ -1,0 +1,14 @@
+{ "CN": "kubernetes.fates.alunduil.com"
+, "key":
+    { "algo": "rsa"
+    , "size": 4096
+    }
+, "names":
+    [ { "C": "US"
+      , "L": "Austin"
+      , "O": "alunduil.com"
+      , "OU": "kubernetes.fates"
+      , "ST": "Texas" 
+      }
+    ]
+}
