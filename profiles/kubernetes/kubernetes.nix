@@ -15,8 +15,7 @@
         };
 
       kubelet =
-        { clusterDomain = "kubernetes";
-          enable = true;
+        { enable = true;
         };
     };
 }
