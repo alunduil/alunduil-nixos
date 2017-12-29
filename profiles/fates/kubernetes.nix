@@ -19,8 +19,8 @@
 
       kubeconfig =
         { caFile = certificates/ca.pem;
-          certFile = certificates/kubernetes-proxy.pem;
-          keyFile = certificates/kubernetes-proxy.key;
+          certFile = certificates/proxy.pem;
+          keyFile = certificates/proxy-key.pem;
           server = "http://fates";
         };
     };

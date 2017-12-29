@@ -1,5 +1,7 @@
-{ "CN": "ca.kubernetes.fates.alunduil.com"
-, "hosts": []
+{ "CN": "kubernetes.fates.alunduil.com"
+, "hosts":
+    [ "fates"
+    ]
 , "key":
     { "algo": "rsa"
     , "size": 4096
@@ -8,8 +10,8 @@
     [ { "C": "US"
       , "L": "Austin"
       , "O": "alunduil.com"
-      , "OU": "kubernetes.fates"
-      , "ST": "Texas" 
+      , "OU": "fates.kubernetes"
+      , "ST": "Texas"
       }
     ]
 }

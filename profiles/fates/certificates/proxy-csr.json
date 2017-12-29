@@ -1,0 +1,17 @@
+{ "CN": "system:kube-proxy"
+, "hosts":
+    [ "fates.alunduil.com"
+    ]
+, "key":
+    { "algo": "rsa"
+    , "size": 4096
+    }
+, "names":
+    [ { "C": "US"
+      , "L": "Austin"
+      , "O": "system:node-proxier"
+      , "OU": "fates.kubernetes"
+      , "ST": "Texas"
+      }
+    ]
+}
