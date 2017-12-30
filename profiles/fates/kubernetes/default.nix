@@ -10,7 +10,6 @@
           keyFile = certificates/kubernetes-etcd.key;
         };
 
-      /*
       apiserver =
         { clientCaFile = certificates/ca.pem;
           kubeletClientCaFile = certificates/ca.pem;
@@ -24,6 +23,5 @@
           keyFile = certificates/proxy-key.pem;
           server = "http://fates";
         };
-        */
     };
 }
