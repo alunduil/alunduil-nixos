@@ -1,0 +1,15 @@
+{ "CN": "ca.etcd.fates.alunduil.com"
+, "hosts": []
+, "key":
+    { "algo": "rsa"
+    , "size": 4096
+    }
+, "names":
+    [ { "C": "US"
+      , "L": "Austin"
+      , "O": "alunduil.com"
+      , "OU": "etcd.fates"
+      , "ST": "Texas" 
+      }
+    ]
+}

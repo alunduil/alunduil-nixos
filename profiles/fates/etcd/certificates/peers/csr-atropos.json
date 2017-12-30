@@ -1,0 +1,17 @@
+{ "CN": "atropos"
+, "hosts":
+    [ "atropos"
+    ]
+, "key":
+    { "algo": "rsa"
+    , "size": 4096
+    }
+, "names":
+    [ { "C": "US"
+      , "L": "Austin"
+      , "O": "alunduil.com"
+      , "OU": "etcd.fates"
+      , "ST": "Texas"
+      }
+    ]
+}

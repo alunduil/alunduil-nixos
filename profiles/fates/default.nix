@@ -1,7 +1,7 @@
 { ... }:
 { imports =
-    [ ./etcd.nix
-      ./kubernetes.nix
+    [ ./etcd
+      ./kubernetes
       ../kubernetes
     ];
 }

@@ -11,8 +11,8 @@
     ];
 
   services.etcd =
-    let clientScheme = "http" + (if config.services.etcd.certFile then "s" else "") + "://";
-        peerScheme = "http" + (if config.services.etcd.peerCertFile then "s" else "") + "://";
+    let clientScheme = "http" + (if config.services.etcd.certFile != null then "s" else "") + "://";
+        peerScheme = "http" + (if config.services.etcd.peerCertFile != null then "s" else "") + "://";
     in
       { advertiseClientUrls =
           [ (clientScheme + config.networking.hostName + ":2379")
