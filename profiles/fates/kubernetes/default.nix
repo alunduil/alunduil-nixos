@@ -1,27 +1,16 @@
 { config, ... }:
 { services.kubernetes =
-    { etcd =
-        { caFile = certificates/ca.pem;
-          certFile = certificates/kubernetes-etcd.pem;
-          servers = [ "https://atropos:2380"
-                      "https://clothio:2380"
-                      "https://lachesis:2380"
-                    ];
-          keyFile = certificates/kubernetes-etcd.key;
-        };
-
-      apiserver =
-        { clientCaFile = certificates/ca.pem;
-          kubeletClientCaFile = certificates/ca.pem;
-          kubeletClientCertFile = certificates/kubelet-client.pem;
-          kubeletClientKeyFile = certificates/kubelet-client.key;
-        };
+    { caFile = ./certificates/ca.pem;
 
       kubeconfig =
-        { caFile = certificates/ca.pem;
-          certFile = certificates/proxy.pem;
-          keyFile = certificates/proxy-key.pem;
+        { certFile = ./certificates + "/${config.networking.hostName}.pem";
+          keyFile = ./certificates + "/${config.networking.hostName}-key.pem";
           server = "http://fates";
+        };
+      
+      proxy.kubeconfig =
+        { certFile = ./certificates/proxy.pem;
+          keyFile = ./certificates/proxy-key.pem;
         };
     };
 }

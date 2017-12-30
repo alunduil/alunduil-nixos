@@ -7,7 +7,7 @@ CA_CERT   := ca.pem
 CA_CSR    := ca.csr
 CA_KEY    := ca-key.pem
 
-NAMES     := admin api atropos-kubernetes clothio-kubernetes lachesis-kubernetes proxy
+NAMES     := admin api proxy atropos clothio lachesis
 
 CERTS     := $(NAMES:%=%.pem)
 CSRS      := $(NAMES:%=%.csr)
