@@ -2,18 +2,18 @@
 { imports =
     [ ./bacula-fd
       ./btrfs
-      ./cifs
       ./chromecast.nix
+      ./cifs
       ./docker.nix
+      ./libvirtd.nix
       ./postfix
       ./redshift.nix
       ./slock.nix
       ../../system.nix
       ./udiskie.nix
       ./unclutter.nix
-      ./urxvtd.nix
       ./upower.nix
-      ./virtualbox.nix
+      ./urxvtd.nix
       ./xserver.nix
     ];
 
