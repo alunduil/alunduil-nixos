@@ -4,7 +4,10 @@
     ];
 
   services.kubernetes =
-    { kubelet.enable = true;
+    { apiserver.enable = true;
+      controllerManager.enable = true;
+      kubelet.enable = true;
       proxy.enable = true;
+      scheduler.enable = true;
     };
 }

@@ -1,12 +1,12 @@
 let
   odroid-vm =
-    { deployment.libvirtd.memorySize = 2048;
-    } // common;
-
-  common =
     { deployment =
         { targetEnv = "libvirtd";
-          libvirtd.headless = true;
+          libvirtd =
+            { headless = true;
+              memorySize = 2048;
+              vcpu = 4;
+            };
         };
 
       services.dd-agent.tags =
@@ -17,8 +17,20 @@ let
     };
 in
 { fates =
-    { deployment.libvirtd.memorySize = 256;
-    } // common;
+    { deployment =
+        { targetEnv = "libvirtd";
+          libvirtd =
+            { headless = true;
+              memorySize = 256;
+            };
+        };
+
+      services.dd-agent.tags =
+        [ "fates"
+          "libvirtd"
+          "libvirtd-guest"
+        ];
+    };
 
   atropos  = odroid-vm;
   clothio  = odroid-vm;

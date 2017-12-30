@@ -1,4 +1,4 @@
-{ network.description = "cronus.alunduil.com";
+{ network.description = "fates.alunduil.com";
   
   fates    = import ../../hosts/fates;
 
