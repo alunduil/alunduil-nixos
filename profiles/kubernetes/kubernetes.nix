@@ -7,13 +7,13 @@
     { apiserver =
         { address = "0.0.0.0";
           admissionControl =
-            [ DefaultStorageClass
-              Initializers
-              LimitRanger
-              NamespaceLifecycle
-              NodeRestriction
-              ResourceQuota
-              ServiceAccount
+            [ "DefaultStorageClass"
+              "Initializers"
+              "LimitRanger"
+              "NamespaceLifecycle"
+              "NodeRestriction"
+              "ResourceQuota"
+              "ServiceAccount"
             ];
           advertiseAddress = config.networking.hostName;
           authorizationMode =
