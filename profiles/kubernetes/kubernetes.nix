@@ -3,6 +3,10 @@
     [ "kubernetes"
     ];
 
+  networking.firewall.allowedTCPPorts =
+    [ 443
+    ];
+
   services.kubernetes =
     { apiserver =
         { address = "0.0.0.0";
