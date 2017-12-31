@@ -24,9 +24,17 @@
           runtimeConfig = "api/all";
         };
 
-      controllerManager.enable = true;
+      controllerManager =
+        { address = "0.0.0.0";
+          enable = true;
+        };
+
       kubelet.enable = true;
       proxy.enable = true;
-      scheduler.enable = true;
+
+      scheduler =
+        { address = "0.0.0.0";
+          enable = true;
+        };
     };
 }

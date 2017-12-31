@@ -10,6 +10,11 @@
       
       caFile = ./certificates/ca.pem;
 
+      controllerManager =
+        { rootCaFile = ./certificates/ca.pem;
+          serviceAccountKeyFile = ./certificates/ca-key.pem;
+        };
+
       etcd =
         { caFile = ../etcd/certificates/clients/ca.pem;
           certFile = ../etcd/certificates/clients + "/${config.networking.hostName}.pem";
