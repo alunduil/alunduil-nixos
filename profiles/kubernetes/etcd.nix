@@ -1,7 +1,16 @@
 { config, ... }:
 { environment.etc =
     { "dd-agent/conf.d/etcd.yaml" =
-        { source = ./etcd.yaml;
+        { text = ''
+          init_config:
+
+          instances:
+            - url: "https://${config.networking.hostName}:2379"
+              timeout: 5
+              ssl_keyfile: ${config.services.etcd.keyFile}
+              ssl_certfile: ${config.services.etcd.certFile}
+              ssl_ca_certs: ${config.services.etcd.trustedCaFile}
+          '';
         };
     };
 
