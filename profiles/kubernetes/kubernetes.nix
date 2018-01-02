@@ -39,7 +39,14 @@
           enable = true;
         };
 
-      kubelet.enable = true;
+      kubelet =
+        { enable = true;
+          extraOpts = ''
+          --anonymous-auth=false
+          '';
+          networkPlugin = "cni";
+        };
+
       proxy.enable = true;
 
       scheduler =

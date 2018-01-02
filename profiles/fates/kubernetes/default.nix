@@ -31,6 +31,11 @@
           keyFile = ./certificates + "/${config.networking.hostName}-key.pem";
           server = "http://fates";
         };
+
+      kubelet =
+        { tlsCertFile = ./certificates + "/${config.networking.hostName}.pem";
+          tlsKeyFile = ./certificates + "/${config.networking.hostName}-key.pem";
+        };
       
       proxy.kubeconfig =
         { certFile = ./certificates/proxy.pem;
