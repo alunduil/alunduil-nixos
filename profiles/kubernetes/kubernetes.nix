@@ -1,10 +1,16 @@
-{ config, ... }:
-{ services.dd-agent.tags =
-    [ "kubernetes"
+{ config, pkgs, ... }:
+{ networking.firewall.allowedTCPPorts =
+    [ 443
     ];
 
-  networking.firewall.allowedTCPPorts =
-    [ 443
+  environment =
+    { systemPackages =
+        [ pkgs.socat
+        ];
+    };
+
+  services.dd-agent.tags =
+    [ "kubernetes"
     ];
 
   services.kubernetes =
