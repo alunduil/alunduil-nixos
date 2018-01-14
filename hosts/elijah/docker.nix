@@ -8,8 +8,5 @@
       "docker-host"
     ];
 
-  virtualisation.docker =
-    { autoPrune.enable = true;
-      storageDriver = "btrfs";
-    };
+  virtualisation.docker.storageDriver = "btrfs";
 }
