@@ -1,6 +1,7 @@
 { pkgs, ... }:
 { environment.systemPackages =
     [ pkgs.dmenu
+      pkgs.fvwm
     ];
       
   services.xserver =
