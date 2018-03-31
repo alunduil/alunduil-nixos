@@ -1,1 +1,0 @@
-compaq-presario-6130n.nix
