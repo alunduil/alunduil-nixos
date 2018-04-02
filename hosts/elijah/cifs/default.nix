@@ -18,6 +18,7 @@
           "noauto"
           "nofail"
           "uid=alunduil"
+          "vers=1.0"
           "x-systemd.automount"
           "x-systemd.device-timeout=10s"
           "x-systemd.idle-timeout=30s"
