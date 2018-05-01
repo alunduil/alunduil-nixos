@@ -47,5 +47,5 @@
     networkmanager.enable = true;
   };
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/Los_Angeles";
 }
