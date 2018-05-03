@@ -10,6 +10,7 @@
       ./redshift.nix
       ./slock.nix
       ../../system.nix
+      ./tmux.nix
       ./udiskie.nix
       ./unclutter.nix
       ./upower.nix
@@ -21,7 +22,6 @@
     [ pkgs.pavucontrol
       pkgs.python27Packages.docker_compose
       pkgs.python27Packages.goobook
-      pkgs.tmux  # TODO programs.tmux.enable
     ];
 
   fonts = {
