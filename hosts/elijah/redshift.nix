@@ -8,8 +8,8 @@
             [ "-m randr"
             ];
 
-          latitude = "37.484304";
-          longitude = "-122.145815";
+          latitude = "37.488836";
+          longitude = "-122.228826";
 
           temperature =
             { day = 6500;
