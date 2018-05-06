@@ -1,11 +1,12 @@
 { pkgs, ... }:
 { environment.systemPackages =
     [ pkgs.dmenu
+      pkgs.fvwm
     ];
       
   services.xserver =
     { displayManager =
-        { job.logsXsession = true;
+        { job.logToFile = true;
 
           sddm.enable = true;
         };

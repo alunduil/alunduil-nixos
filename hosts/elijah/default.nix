@@ -2,19 +2,19 @@
 { imports =
     [ ./bacula-fd
       ./btrfs
-      ./cifs
       ./chromecast.nix
+      ./cifs
       ./docker.nix
+      ./libvirtd.nix
       ./postfix
-      ./printing.nix
       ./redshift.nix
       ./slock.nix
       ../../system.nix
+      ./tmux.nix
       ./udiskie.nix
       ./unclutter.nix
-      ./urxvtd.nix
       ./upower.nix
-      ./virtualbox.nix
+      ./urxvtd.nix
       ./xserver.nix
     ];
 
@@ -22,7 +22,6 @@
     [ pkgs.pavucontrol
       pkgs.python27Packages.docker_compose
       pkgs.python27Packages.goobook
-      pkgs.tmux  # TODO programs.tmux.enable
     ];
 
   fonts = {
@@ -48,5 +47,5 @@
     networkmanager.enable = true;
   };
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/Los_Angeles";
 }
