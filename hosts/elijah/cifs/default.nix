@@ -13,30 +13,31 @@
   fileSystems =
     let
       options =
-        [ "credentials=/etc/cifs.credentials"
-          "gid=users"
+        [ "gid=users"
           "noauto"
           "nofail"
           "uid=alunduil"
           "x-systemd.automount"
           "x-systemd.device-timeout=10s"
           "x-systemd.idle-timeout=30s"
+          "credentials=/etc/cifs.credentials"
         ];
+
     in
-      { "/media/nas/documents" =
-          { device = "//nas/Documents";
+      { "/media/freenas/documents" =
+          { device = "//freenas/documents";
             fsType = "cifs";
             options = options;
           };
 
-        "/media/nas/media" =
-          { device = "//nas/Media";
+        "/media/freenas/media" =
+          { device = "//freenas/media";
             fsType = "cifs";
             options = options;
           };
 
-        "/media/nas/scanned" =
-          { device = "//nas/Scanned";
+        "/media/freenas/scans" =
+          { device = "//freenas/scans";
             fsType = "cifs";
             options = options;
           };

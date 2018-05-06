@@ -4,6 +4,7 @@
         { description = "Alex Brandt,,,210.723.0367,alunduil@alunduil.com";
           extraGroups =
             [ "docker"
+              "libvirtd"
               "networkmanager"
               "wheel"
             ];
