@@ -47,5 +47,7 @@
     networkmanager.enable = true;
   };
 
+  powerManagement.powertop.enable = true;
+
   time.timeZone = "America/Los_Angeles";
 }
