@@ -1,14 +1,15 @@
 { ... }:
-{ imports =
-    [ ./nginx
-      ../../system.nix
-    ];
+{
+  imports = [
+    ./nginx
+    ../../system.nix
+  ];
 
   environment.noXlibs = true;
 
-  networking =
-    { hostName = "fates";
-    };
+  networking = {
+    hostName = "fates";
+  };
 
   sound.enable = false;
 

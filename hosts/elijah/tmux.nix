@@ -1,5 +1,6 @@
 { ... }:
-{ programs.tmux = {
+{
+  programs.tmux = {
     clock24 = true;
     enable = true;
     escapeTime = 0;

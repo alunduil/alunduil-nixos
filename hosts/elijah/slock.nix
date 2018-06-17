@@ -1,13 +1,14 @@
 { pkgs, ... }:
-{ environment.systemPackages =
-    [ pkgs.slock
-    ];
-  
-  security.wrappers =
-    { slock =
-        { source = "${pkgs.slock.out}/bin/slock";
-        };
+{
+  environment.systemPackages = [
+    pkgs.slock
+  ];
+
+  security.wrappers = {
+    slock = {
+      source = "${pkgs.slock.out}/bin/slock";
     };
+  };
 
   services.xserver.displayManager.sessionCommands =
     ''
