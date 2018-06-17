@@ -1,8 +1,12 @@
 { pkgs, ... }:
-{ environment.systemPackages =
-    [ pkgs.dmenu
-      pkgs.fvwm
-    ];
+{
+  environment.systemPackages = [
+    pkgs.dmenu
+    pkgs.fvwm
+    pkgs.xclip
+    pkgs.xev
+    pkgs.xkill
+  ];
       
   services.xserver =
     { displayManager =
