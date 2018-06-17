@@ -1,7 +1,8 @@
 { ... }:
-{ imports =
-    [ ./docker.nix
-      ./etcd
-      ./kubernetes.nix
-    ];
+{
+  imports = [
+    ./docker.nix
+    ./etcd
+    ./kubernetes.nix
+  ];
 }

@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
-{ imports = [
+{
+  imports = [
     ./bacula-fd
     ./btrfs
     ./chromecast.nix

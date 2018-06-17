@@ -1,7 +1,8 @@
 { pkgs, ... }:
-{ environment.systemPackages =
-    [ pkgs.uptimed
-    ];
+{
+  environment.systemPackages = [
+    pkgs.uptimed
+  ];
 
   services.uptimed.enable = true;
 }
