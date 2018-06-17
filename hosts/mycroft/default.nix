@@ -8,7 +8,6 @@
     ../../services/openssh.nix
     ../../services/postfix
     ../../services/smartd.nix
-    ../../services/uptimed.nix
     #../../system.nix
     ../../users/alunduil.nix
   ];
