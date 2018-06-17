@@ -1,28 +1,36 @@
 { config, pkgs, ... }:
-{ imports =
-    [ ./bacula-fd
-      ./btrfs
-      ./chromecast.nix
-      ./cifs
-      ./docker.nix
-      ./libvirtd.nix
-      ./postfix.nix
-      ./redshift.nix
-      ./slock.nix
-      ../../system.nix
-      ./tmux.nix
-      ./udiskie.nix
-      ./unclutter.nix
-      ./upower.nix
-      ./urxvtd.nix
-      ./xserver.nix
-    ];
+{ imports = [
+    ./bacula-fd
+    ./btrfs
+    ./chromecast.nix
+    ./cifs
+    ./docker.nix
+    ./libvirtd.nix
+    ./postfix.nix
+    ./pulseaudio.nix
+    ./redshift.nix
+    ./slock.nix
+    ../../system.nix
+    ./tmux.nix
+    ./udiskie.nix
+    ./unclutter.nix
+    ./upower.nix
+    ./urxvtd.nix
+    ./xserver.nix
+  ];
 
-  environment.systemPackages =
-    [ pkgs.pavucontrol
-      pkgs.python27Packages.docker_compose
-      pkgs.python27Packages.goobook
-    ];
+  environment.systemPackages = [
+    pkgs.chromium
+    pkgs.dwarf-fortress
+    pkgs.glxinfo
+    pkgs.gource
+    pkgs.picard
+    pkgs.python36Packages.docker_compose
+    pkgs.python36Packages.goobook
+    pkgs.rogue
+    pkgs.xev
+    pkgs.xkill
+  ];
 
   fonts = {
     enableDefaultFonts = true;
@@ -31,14 +39,7 @@
     fonts = [ pkgs.hack-font ];
   };
 
-  hardware = {
-    bluetooth.enable = true;
-
-    pulseaudio = {
-      enable = true;
-      package = pkgs.pulseaudioFull;
-    };
-  };
+  hardware.bluetooth.enable = true;
 
   networking = {
     domain = "laptops.alunduil.com";
