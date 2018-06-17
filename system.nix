@@ -13,24 +13,30 @@
       "/share/zsh"
     ];
 
-    systemPackages =
-        [ pkgs.git
-          pkgs.htop
-          pkgs.iftop
-          pkgs.iotop
-          pkgs.iptraf-ng
-          pkgs.lsof
-          pkgs.ncdu
-          pkgs.nethogs
-          pkgs.pciutils
-          pkgs.usbutils
-          pkgs.wget
-          pkgs.wgetpaste
-        ];
+    systemPackages = [
+      pkgs.bind
+      pkgs.git
+      pkgs.htop
+      pkgs.iftop
+      pkgs.iotop
+      pkgs.iptraf-ng
+      pkgs.jq
+      pkgs.lsof
+      pkgs.ncdu
+      pkgs.nethogs
+      pkgs.nmap
+      pkgs.pciutils
+      pkgs.speedtest-cli
+      pkgs.tree
+      pkgs.usbutils
+      pkgs.wget
+      pkgs.wgetpaste
+      pkgs.whois
+    ];
       
-      variables =
-        { NIXPKGS_ALLOW_UNFREE = "1";
-        };
+    variables = {
+      NIXPKGS_ALLOW_UNFREE = "1";
+    };
   };
 
   nix =
