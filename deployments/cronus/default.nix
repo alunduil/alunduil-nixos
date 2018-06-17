@@ -1,5 +1,6 @@
-{ network.description = "cronus.alunduil.com";
-  
+{
+  network.description = "cronus.alunduil.com";
+
   cronus   = import ../../hosts/cronus;
 
   demeter  = import ../../hosts/demeter;

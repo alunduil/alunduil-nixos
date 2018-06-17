@@ -1,7 +1,8 @@
 { pkgs, ... }:
-{ environment.systemPackages =
-    [ pkgs.python27Packages.udiskie
-    ];
+{
+  environment.systemPackages = [
+    pkgs.python27Packages.udiskie
+  ];
 
   services.xserver.displayManager.sessionCommands =
     ''

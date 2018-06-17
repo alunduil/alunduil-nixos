@@ -1,11 +1,12 @@
 { ... }:
-{ environment.etc =
-    { "dd-agent/conf.d/btrfs.yaml" =
-        { source = ./btrfs.yaml;
-        };
+{
+  environment.etc = {
+    "dd-agent/conf.d/btrfs.yaml" = {
+      source = ./btrfs.yaml;
     };
+  };
 
-  services.dd-agent.tags =
-    [ "btrfs"
-    ];
+  services.dd-agent.tags = [
+    "btrfs"
+  ];
 }

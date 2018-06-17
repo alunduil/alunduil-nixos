@@ -1,14 +1,15 @@
 { ... }:
-{ imports =
-    [ ../profiles/cronus
-      ../system.nix
-    ];
+{
+  imports = [
+    ../profiles/cronus
+    ../system.nix
+  ];
 
   environment.noXlibs = true;
 
-  networking =
-    { hostName = "zeus";
-    };
+  networking = {
+    hostName = "zeus";
+  };
 
   sound.enable = false;
 

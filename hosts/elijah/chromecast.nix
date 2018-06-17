@@ -1,3 +1,4 @@
 { pkgs, ... }:
-{ networking.firewall.allowedUDPPorts = [ 5353 ];
+{
+  networking.firewall.allowedUDPPorts = [ 5353 ];
 }

@@ -1,8 +1,9 @@
 { ... }:
-{ services.dd-agent.tags =
-    [ "libvirtd"
-      "libvirtd-host"
-    ];
+{
+  services.dd-agent.tags = [
+    "libvirtd"
+    "libvirtd-host"
+  ];
 
   networking.firewall.checkReversePath = false;
 
