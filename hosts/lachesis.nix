@@ -1,14 +1,15 @@
 { ... }:
-{ imports =
-    [ ../profiles/fates
-      ../system.nix
-    ];
+{
+  imports = [
+    ../profiles/fates
+    ../system.nix
+  ];
 
   environment.noXlibs = true;
 
-  networking =
-    { hostName = "lachesis";
-    };
+  networking = {
+    hostName = "lachesis";
+  };
 
   sound.enable = false;
 

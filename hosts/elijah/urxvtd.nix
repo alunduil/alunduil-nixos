@@ -1,3 +1,4 @@
 { ... }:
-{ services.urxvtd.enable = true;
+{
+  services.urxvtd.enable = true;
 }

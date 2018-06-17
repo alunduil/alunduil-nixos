@@ -1,24 +1,25 @@
 { ... }:
-{ environment.etc =
-    { "dd-agent/conf.d/docker_daemon.yaml" =
-        { source = ./docker_daemon.yaml;
-        };
+{
+  environment.etc = {
+    "dd-agent/conf.d/docker_daemon.yaml" = {
+      source = ./docker_daemon.yaml;
     };
+  };
 
-  services.dd-agent.tags =
-    [ "docker"
-    ];
+  services.dd-agent.tags = [
+    "docker"
+  ];
 
-  users.users =
-    { datadog =
-        { extraGroups =
-            [ "docker"
-            ];
-        };
+  users.users = {
+    datadog = {
+      extraGroups = [
+        "docker"
+      ];
     };
+  };
 
-  virtualisation.docker =
-    { autoPrune.enable = true;
-      enable = true;
-    };
+  virtualisation.docker = {
+    autoPrune.enable = true;
+    enable = true;
+  };
 }
