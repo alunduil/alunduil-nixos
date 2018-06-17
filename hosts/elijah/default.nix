@@ -6,7 +6,7 @@
       ./cifs
       ./docker.nix
       ./libvirtd.nix
-      ./postfix
+      ./postfix.nix
       ./redshift.nix
       ./slock.nix
       ../../system.nix
