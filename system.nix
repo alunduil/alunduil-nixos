@@ -3,7 +3,6 @@
   imports = [
     ./services/datadog.nix
     ./services/smartd.nix
-    ./services/uptimed.nix
     ./users/alunduil.nix
   ];
 
