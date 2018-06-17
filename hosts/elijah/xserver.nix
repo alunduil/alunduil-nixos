@@ -4,8 +4,8 @@
     pkgs.dmenu
     pkgs.fvwm
     pkgs.xclip
-    pkgs.xev
     pkgs.xkill
+    pkgs.xorg.xev
   ];
 
   services.xserver = {
