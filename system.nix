@@ -8,8 +8,12 @@
     
   boot.tmpOnTmpfs = true;
 
-  environment =
-    { systemPackages =
+  environment = {
+    pathsToLink = [
+      "/share/zsh"
+    ];
+
+    systemPackages =
         [ pkgs.git
           pkgs.htop
           pkgs.iftop
@@ -27,7 +31,7 @@
       variables =
         { NIXPKGS_ALLOW_UNFREE = "1";
         };
-    };
+  };
 
   nix =
     { autoOptimiseStore = true;
