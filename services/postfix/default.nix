@@ -19,7 +19,7 @@
     domain = "alunduil.com";
     enable = true;
     extraConfig = builtins.readFile ./main.cf;
-    hostname = config.networking.hostName + if config.networking.domain == null then "" else "." + config.networking.domain;
+    hostname = config.networking.hostName + (if config.networking.domain == null then "" else "." + config.networking.domain);
     origin = "$mydomain";
     relayHost = "smtp.gmail.com";
     relayPort = 587;
