@@ -27,7 +27,7 @@
     pkgs.gource
     pkgs.picard
     pkgs.python36Packages.docker_compose
-    pkgs.python36Packages.goobook
+    pkgs.python27Packages.goobook
     pkgs.rogue
     pkgs.xev
     pkgs.xkill
