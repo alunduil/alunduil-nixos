@@ -6,7 +6,7 @@
   };
 
   environment.systemPackages = [
-    pkgs.pcsc-tools
+    pkgs.pcsctools
   ];
 
   hardware.cpu.intel.updateMicrocode = true;
