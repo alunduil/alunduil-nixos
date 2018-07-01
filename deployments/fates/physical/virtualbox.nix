@@ -8,12 +8,6 @@ let
       targetEnv = "virtualbox";
       virtualbox.headless = true;
     };
-
-    services.dd-agent.tags = [
-      "fates"
-      "virtualbox"
-      "virtualbox-guest"
-    ];
   };
 in
   {

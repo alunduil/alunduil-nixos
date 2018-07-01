@@ -20,8 +20,4 @@
       shell = pkgs.zsh;
     };
   };
-
-  services.dd-agent.tags = [
-    "alunduil"
-  ];
 }

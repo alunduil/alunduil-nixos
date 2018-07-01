@@ -1,9 +1,5 @@
 { config, ... }:
 {
-  services.dd-agent.tags = [
-    "kubernetes"
-  ];
-
   services.kubernetes = {
     apiserver = {
       admissionControl = [

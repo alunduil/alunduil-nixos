@@ -1,11 +1,5 @@
 { config, ... }:
 {
-  environment.etc = {
-    "dd-agent/conf.d/etcd.yaml" = {
-      source = ./etcd.yaml;
-    };
-  };
-
   networking.firewall.allowedTCPPorts = [
     2379
     2380
@@ -28,8 +22,4 @@
         (peerScheme + config.networking.hostName + ":2380")
       ];
     };
-
-  services.dd-agent.tags = [
-    "etcd"
-  ];
 }

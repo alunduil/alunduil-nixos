@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ../../services/docker
+    ../../services/docker.nix
   ];
 
   networking = {

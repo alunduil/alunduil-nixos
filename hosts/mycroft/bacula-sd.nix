@@ -31,9 +31,5 @@
 
       name = "mycroft.alunduil.com-sd";
     };
-
-    dd-agent.tags = [
-      "bacula-sd"
-    ];
   };
 }
