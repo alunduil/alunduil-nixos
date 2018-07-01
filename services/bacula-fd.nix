@@ -23,8 +23,4 @@
   services.cron.systemCronJobs = [
     "&runatreboot,runonce(true) * * * * * for D in /dev/?d?; do sfdisk -d $D; done 2>/dev/null | sed -e 's/label: gpt/\\n&/g' > /home/partitions.txt"
   ];
-
-  services.dd-agent.tags = [
-    "bacula-fd"
-  ];
 }

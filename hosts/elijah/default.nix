@@ -2,7 +2,6 @@
 {
   imports = [
     ./bacula-fd
-    ./btrfs
     ./chromecast.nix
     ./cifs
     ./docker.nix

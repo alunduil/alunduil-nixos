@@ -9,8 +9,4 @@
       ];
     };
   };
-
-  services.dd-agent.tags = [
-    "perniferuse"
-  ];
 }
