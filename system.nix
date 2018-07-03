@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./services/datadog.nix
     ./services/smartd.nix
     ./users/alunduil.nix
   ];
