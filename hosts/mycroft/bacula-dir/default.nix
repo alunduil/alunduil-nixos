@@ -24,10 +24,6 @@
       password = "998da8a46eaa434e8be8ff7fc877cf94";
     };
 
-    dd-agent.tags = [
-      "bacula-dir"
-    ];
-
     postgresql.package = pkgs.postgresql94;
   };
 }

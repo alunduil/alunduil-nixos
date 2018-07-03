@@ -54,9 +54,4 @@
       "8.8.4.4"
     ];
   };
-
-  services.dd-agent.tags = [
-    "compaq"
-    "desktop"
-  ];
 }
