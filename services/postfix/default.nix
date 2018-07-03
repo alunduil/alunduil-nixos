@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 {
-  security.sudo.extraConfig =
-    ''
-    datadog ALL=(ALL) NOPASSWD:${pkgs.findutils.out}/bin/find
-    '';
-
   services.postfix = {
     domain = "alunduil.com";
     enable = true;
