@@ -2,7 +2,7 @@
 {
   imports = [
     ./docker.nix
-    ./etcd
+    ./etcd.nix
     ./kubernetes.nix
   ];
 }

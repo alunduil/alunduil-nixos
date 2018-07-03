@@ -1,12 +1,7 @@
 { ... }:
 {
   imports = [
-    ../../services/docker
-  ];
-
-  services.dd-agent.tags = [
-    "docker"
-    "docker-host"
+    ../../services/docker.nix
   ];
 
   virtualisation.docker.storageDriver = "btrfs";

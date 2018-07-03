@@ -5,10 +5,5 @@
       virtualbox.headless = true;
       virtualbox.memorySize = 8192;
     };
-
-    services.dd-agent.tags = [
-      "virtualbox"
-      "virtualbox-guest"
-    ];
   };
 }
