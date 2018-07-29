@@ -17,6 +17,7 @@
     ./upower.nix
     ./urxvtd.nix
     ./xserver.nix
+    ./zfs.nix
   ];
 
   environment.systemPackages = [
@@ -41,6 +42,7 @@
 
   networking = {
     domain = "laptops.alunduil.com";
+    hostId = "defdc9af";
     hostName = "elijah";
 
     networkmanager.enable = true;
