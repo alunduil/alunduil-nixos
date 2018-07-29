@@ -8,7 +8,7 @@
     ./postfix.nix
     ./pulseaudio.nix
     ./redshift.nix
-    ../services/docker.nix
+    ../../services/docker.nix
     ./slock.nix
     ../../system.nix
     ./tmux.nix
