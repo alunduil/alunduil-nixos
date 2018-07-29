@@ -4,11 +4,11 @@
     ./bacula-fd
     ./chromecast.nix
     ./cifs
-    ./docker.nix
     ./libvirtd.nix
     ./postfix.nix
     ./pulseaudio.nix
     ./redshift.nix
+    ../services/docker.nix
     ./slock.nix
     ../../system.nix
     ./tmux.nix
