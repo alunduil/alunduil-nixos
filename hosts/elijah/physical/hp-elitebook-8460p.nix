@@ -1,8 +1,15 @@
 { pkgs, ... }:
 {
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = false;
+  boot = {
+    loader = {
+      efi.canTouchEfiVariables = false;
+      systemd-boot.enable = true;
+    };
+
+    supportedFilesystems = [
+      "btrfs"
+      "zfs"
+    ];
   };
 
   environment.systemPackages = [
