@@ -35,7 +35,13 @@
     enableDefaultFonts = true;
     enableFontDir = true;
 
-    fonts = [ pkgs.hack-font ];
+    fonts = [
+      pkgs.fira
+      pkgs.fira-code
+      pkgs.fira-code-symbols
+      pkgs.fira-mono
+      pkgs.hack-font
+    ];
   };
 
   hardware.bluetooth.enable = true;
