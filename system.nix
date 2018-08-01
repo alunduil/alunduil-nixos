@@ -67,7 +67,7 @@
     cron = {
       enable = false;
       systemCronJobs = [
-        "%nightly,random,mailto(alunduil+${config.networking.hostName}@gmail.com) * * nix-collect-garbage --delete-older-than 180d"
+        "%nightly,random,mailto(alunduil+${config.networking.hostName}@gmail.com) * 22-7 nix-collect-garbage --delete-older-than 180d"
       ];
     };
 
