@@ -34,8 +34,6 @@
   fonts = {
     enableDefaultFonts = true;
     enableFontDir = true;
-
-    fonts = [ pkgs.hack-font ];
   };
 
   hardware.bluetooth.enable = true;
