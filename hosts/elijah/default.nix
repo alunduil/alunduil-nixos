@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./bacula-fd
     ./chromecast.nix
     ./cifs
     ./libvirtd.nix
