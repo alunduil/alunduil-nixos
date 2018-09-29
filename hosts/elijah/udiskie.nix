@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
-    pkgs.python27Packages.udiskie
+    pkgs.udiskie
   ];
 
   services.xserver.displayManager.sessionCommands =
     ''
-    ${pkgs.python27Packages.udiskie}/bin/udiskie &
+    ${pkgs.udiskie}/bin/udiskie &
     '';
 }
