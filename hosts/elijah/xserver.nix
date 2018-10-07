@@ -46,5 +46,7 @@
         enableContribAndExtras = true;
       };
     };
+
+    xkbOptions = "terminate:crl_alt_bksp, compose:caps";
   };
 }
