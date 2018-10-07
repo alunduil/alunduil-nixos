@@ -21,13 +21,10 @@
 
   environment.systemPackages = [
     pkgs.chromium
-    pkgs.dwarf-fortress
     pkgs.glxinfo
     pkgs.gource
-    pkgs.picard
     pkgs.python36Packages.docker_compose
     pkgs.python27Packages.goobook
-    pkgs.rogue
   ];
 
   fonts = {
