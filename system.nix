@@ -53,13 +53,12 @@
     zsh.enable = true;
   };
 
-/* TODO
-  security.apparmor.enable = true;
-  security.audit.enable = true;
-  security.grsecurity.enable = true;
-*/
-
-  security.sudo.wheelNeedsPassword = false;
+  security = {
+    apparmor.enable = true;
+    audit.enable = true;
+    #lockKernelModules = true;
+    sudo.wheelNeedsPassword = false;
+  };
 
   services = {
     acpid.enable = true;
