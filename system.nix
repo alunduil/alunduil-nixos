@@ -63,16 +63,34 @@
 
   services = {
     acpid.enable = true;
-
-    cron = {
-      enable = false;
-      systemCronJobs = [
-        "%nightly,random,mailto(alunduil+${config.networking.hostName}@gmail.com) * 22-7 nix-collect-garbage --delete-older-than 180d"
-      ];
-    };
-
+    cron.enable = false;
     fcron.enable = true;
   };
 
   system.autoUpgrade.enable = true;
+
+  systemd = {
+    services."nix-delete-older-than" = {
+      description = "NixOS Delete Old Generations";
+      documentation = [
+        "man:nix-collect-garbage(1)"
+      ];
+      enable = true;
+      script = "${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 180d";
+    };
+
+    timers."nix-delete-older-than" = {
+      description = "NixOS Daily Delete Old Generations";
+      documentation = [
+        "man:nix-collect-garbage(1)"
+      ];
+      enable = true;
+      timerConfig = {
+        OnCalendar = "daily";
+      };
+      wantedBy = [
+        "timers.target"
+      ];
+    };
+  };
 }
