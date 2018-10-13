@@ -44,5 +44,7 @@
 
   powerManagement.powertop.enable = true;
 
+  security.chromiumSuidSandbox.enable = true;
+
   time.timeZone = "America/Los_Angeles";
 }
