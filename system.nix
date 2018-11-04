@@ -13,9 +13,9 @@
     ];
 
     systemPackages = [
+      pkgs.atop
       pkgs.bind
       pkgs.git
-      pkgs.htop
       pkgs.iftop
       pkgs.iotop
       pkgs.iptraf-ng
