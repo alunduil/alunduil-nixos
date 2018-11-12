@@ -30,6 +30,12 @@
   fonts = {
     enableDefaultFonts = true;
     enableFontDir = true;
+    fonts = [
+      pkgs.noto-fonts
+      pkgs.noto-fonts-cjk
+      pkgs.noto-fonts-emoji
+      pkgs.noto-fonts-extra
+    ];
   };
 
   hardware.bluetooth.enable = true;
