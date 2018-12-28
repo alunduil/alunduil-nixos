@@ -10,7 +10,28 @@
     relayPort = 587;
     rootAlias = "alunduil+${config.networking.hostName}@gmail.com";
     mapFiles = {
-      "sasl_passwords" = ./sasl_passwords;
+      "sasl_passwords" = pkgs.requireFile rec {
+        name = "sasl_passwords";
+        sha256 = "05536162497wakymsyydnf9yk2g9m7ws9pgxdbm86iapchyh2gsv";
+        message = ''
+          You must inject a "${name}" file into your nix store to use this
+          postfix configuration.  You can insert this file with the following
+          command (from the directory containing ${name}):
+
+          nix-prefetch-url file://$$PWD/${name}
+
+          N.B., You will also need to update the hash in
+          'services/postfix/default.nix' with the output of the previous
+          command.
+
+          This file contains the passwords used for SASL authentication with
+          the configured MTA and is thus not included and needs to be created
+          by hand.  This file is a standard postfix sasl_passwords file with
+          lines following this format:
+
+          [mail.example.com]:587 username:password
+          '';
+      };
     };
   };
 }
