@@ -40,7 +40,10 @@
 
   nix = {
     autoOptimiseStore = true;
-    gc.automatic = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 180d";
+    };
     optimise.automatic = true;
     useSandbox = true;
   };
@@ -67,29 +70,4 @@
   };
 
   system.autoUpgrade.enable = true;
-
-  systemd = {
-    services."nix-delete-older-than" = {
-      description = "NixOS Delete Old Generations";
-      documentation = [
-        "man:nix-collect-garbage(1)"
-      ];
-      enable = true;
-      script = "${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 180d";
-    };
-
-    timers."nix-delete-older-than" = {
-      description = "NixOS Daily Delete Old Generations";
-      documentation = [
-        "man:nix-collect-garbage(1)"
-      ];
-      enable = true;
-      timerConfig = {
-        OnCalendar = "daily";
-      };
-      wantedBy = [
-        "timers.target"
-      ];
-    };
-  };
 }
