@@ -25,6 +25,7 @@
     pkgs.gource
     pkgs.python36Packages.docker_compose
     pkgs.python27Packages.goobook
+    pkgs.alacritty
   ];
 
   fonts = {
