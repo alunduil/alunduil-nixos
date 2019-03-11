@@ -2,6 +2,7 @@
 {
   imports = [
     ../../profiles/laptop
+    ./fingerprint.nix
   ];
 
   networking = {
