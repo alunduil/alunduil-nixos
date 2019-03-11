@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.dmenu
     pkgs.fvwm
+    pkgs.sddm-kcm
     pkgs.xclip
     pkgs.xorg.xev
     pkgs.xorg.xkill
@@ -17,25 +18,19 @@
 
     enable = true;
 
-    synaptics = {
-      accelFactor = "0.02";
+    libinput = {
+      accelSpeed = "7.5";
+      disableWhileTyping = true;
       enable = true;
-      horizEdgeScroll = false;
-
-      maxSpeed = "1.0";
-      minSpeed = "0.6";
-
-      palmDetect = true;
-      tapButtons = false;
-
-      vertEdgeScroll = false;
-      vertTwoFingerScroll = true;
     };
 
     videoDrivers = [
+      "amdgpu"
+      "ati"
+      "radeon"
       "intel"
-      "vesa"
       "modesetting"
+      "vesa"
     ];
 
     windowManager = {
@@ -47,6 +42,6 @@
       };
     };
 
-    xkbOptions = "terminate:crl_alt_bksp, compose:caps";
+    xkbOptions = "compose:caps";
   };
 }

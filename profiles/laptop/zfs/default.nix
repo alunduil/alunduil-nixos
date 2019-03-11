@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = [
     pkgs.lz4
@@ -32,7 +32,7 @@
       "zfs-snapshot-monthly.service"
       "zfs-snapshot-weekly.service"
     ];
-    script = "zfs-replicate --recursive -l alunduil -i /home/alunduil/.ssh/id_rsa --follow-delete groton.alunduil.com volume-11f20cf1-b1b1-4d83-a356-56212ce80221/backups/alunduil/laptop elijah-boot/ROOT";
+    script = "zfs-replicate --recursive -l alunduil -i /home/alunduil/.ssh/id_rsa --follow-delete groton.alunduil.com volume-11f20cf1-b1b1-4d83-a356-56212ce80221/backups/alunduil/laptop ${config.networking.hostName}-boot/ROOT";
     serviceConfig = {};
     unitConfig = {};
   };
