@@ -19,7 +19,7 @@
     enable = true;
 
     libinput = {
-      accelSpeed = "7.5";
+      accelSpeed = "1";
       disableWhileTyping = true;
       enable = true;
     };
