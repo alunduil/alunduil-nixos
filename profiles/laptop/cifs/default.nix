@@ -49,18 +49,21 @@
       "/media/freenas/documents" = {
         device = "//freenas/documents";
         fsType = "cifs";
+        noCheck = true;
         options = options;
       };
 
       "/media/freenas/media" = {
         device = "//freenas/media";
         fsType = "cifs";
+        noCheck = true;
         options = options;
       };
 
       "/media/freenas/scans" = {
         device = "//freenas/scans";
         fsType = "cifs";
+        noCheck = true;
         options = options;
       };
     };
