@@ -19,6 +19,8 @@
     ./zfs
   ];
 
+  boot.earlyVconsoleSetup = true;
+
   environment.systemPackages = [
     pkgs.chromium
     pkgs.glxinfo
