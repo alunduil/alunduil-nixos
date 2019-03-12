@@ -4,6 +4,7 @@
     loader = {
       systemd-boot = {
         consoleMode = "auto";
+        editor = false;
         enable = true;
       };
     };
