@@ -25,10 +25,6 @@
     };
 
     videoDrivers = [
-      "amdgpu"
-      "ati"
-      "radeon"
-      "intel"
       "modesetting"
       "vesa"
     ];
