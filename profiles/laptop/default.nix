@@ -4,7 +4,7 @@
     ./chromecast.nix
     ./cifs
     ./libvirtd.nix
-    ./postfix.nix
+    ../../services/postfix
     ./pulseaudio.nix
     ./redshift.nix
     ../../services/docker.nix
