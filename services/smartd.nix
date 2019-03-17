@@ -9,12 +9,6 @@ in
     services.smartd = {
       defaults.autodetected = defaults;
       defaults.monitored = defaults;
-      devices = [
-        {
-          device = "/dev/nvme0n1";
-          options = "-d nvme,0xffffffff";
-        }
-      ];
       enable = true;
       notifications.mail.enable = true;
     };
