@@ -40,6 +40,7 @@
 
   nix = {
     autoOptimiseStore = true;
+    buildCores = 0;
     gc = {
       automatic = true;
       options = "--delete-older-than 180d";

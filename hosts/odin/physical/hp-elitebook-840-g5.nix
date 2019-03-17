@@ -20,5 +20,15 @@
 
   hardware.cpu.intel.updateMicrocode = true;
 
-  services.pcscd.enable = true;
+  nix.maxJobs = 8;
+
+  services = {
+    pcscd.enable = true;
+    smartd.devices = [
+      {
+        device = "/dev/nvme0n1";
+        options = "-d nvme,0xffffffff";
+      }
+    ];
+  };
 }
