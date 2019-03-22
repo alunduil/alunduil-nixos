@@ -19,11 +19,8 @@
     ./zfs
   ];
 
-  boot.earlyVconsoleSetup = true;
-
   environment.systemPackages = [
     pkgs.chromium
-    pkgs.glxinfo
     pkgs.gource
     pkgs.python36Packages.docker_compose
     pkgs.python27Packages.goobook

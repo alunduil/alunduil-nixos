@@ -4,6 +4,7 @@
     alunduil = {
       description = "Alex Brandt,,,210.723.0367,alunduil@gmail.com";
       extraGroups = [
+        "audio"
         "docker"
         "fcron"
         "libvirtd"
