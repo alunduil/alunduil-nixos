@@ -3,7 +3,6 @@
   boot = {
     loader = {
       systemd-boot = {
-        consoleMode = "auto";
         editor = false;
         enable = true;
       };
@@ -19,6 +18,7 @@
   ];
 
   hardware.cpu.intel.updateMicrocode = true;
+  i18n.consoleFont = "latercyrheb-sun32";
 
   nix.maxJobs = 8;
 
@@ -30,5 +30,12 @@
         options = "-d nvme,0xffffffff";
       }
     ];
+    xserver = {
+      dpi = 192;
+      videoDrivers = [
+        "amdgpu"
+        "intel"
+      ];
+    };
   };
 }

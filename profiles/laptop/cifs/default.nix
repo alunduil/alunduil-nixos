@@ -44,8 +44,7 @@
         "x-systemd.idle-timeout=30s"
         "credentials=/etc/cifs.credentials"
       ];
-    in
-    {
+    in {
       "/media/freenas/documents" = {
         device = "//freenas/documents";
         fsType = "cifs";

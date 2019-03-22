@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.dmenu
     pkgs.fvwm
+    pkgs.glxinfo
     pkgs.sddm-kcm
     pkgs.xclip
     pkgs.xorg.xev
@@ -10,11 +11,7 @@
   ];
 
   services.xserver = {
-    displayManager = {
-      job.logToFile = true;
-
-      sddm.enable = true;
-    };
+    displayManager.sddm.enable = true;
 
     enable = true;
 

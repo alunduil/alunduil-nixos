@@ -9,18 +9,7 @@
     hostName = "odin";
   };
 
-  i18n.consoleFont = "latarcyrheb-sun32";
-
-  services = {
-    postfix.hostname = pkgs.lib.mkForce "odin.laptops.alunduil.com";
-    xserver = {
-      dpi = 192;
-      videoDrivers = [
-        "amdgpu"
-        "intel"
-      ];
-    };
-  };
+  services.postfix.hostname = pkgs.lib.mkForce "odin.laptops.alunduil.com";
 
   time.timeZone = "America/Los_Angeles";
 }
