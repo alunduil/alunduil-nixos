@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  boot.supportedFilesystems = [
+    "zfs"
+  ];
+
   environment.systemPackages = [
     pkgs.lz4
   ];
