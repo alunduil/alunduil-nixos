@@ -1,21 +1,16 @@
 { ... }:
 {
-  services = {
-    geoclue2.enable = true;
+  services.redshift = {
+    enable = true;
+    extraOptions = [
+      "-m randr"
+    ];
 
-    redshift = {
-      enable = true;
-      extraOptions = [
-        "-m randr"
-      ];
+    provider = "geoclue2";
 
-      latitude = "37.488836";
-      longitude = "-122.228826";
-
-      temperature = {
-        day = 6500;
-        night = 1500;
-      };
+    temperature = {
+      day = 6500;
+      night = 1500;
     };
   };
 }
