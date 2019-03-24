@@ -20,11 +20,11 @@
   ];
 
   environment.systemPackages = [
-    pkgs.chromium
-    pkgs.gource
-    pkgs.python36Packages.docker_compose
-    pkgs.python27Packages.goobook
     pkgs.alacritty
+    pkgs.google-chrome
+    pkgs.gource
+    pkgs.python27Packages.goobook
+    pkgs.python36Packages.docker_compose
   ];
 
   fonts = {
