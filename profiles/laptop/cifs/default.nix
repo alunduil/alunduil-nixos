@@ -34,36 +34,24 @@
 
   fileSystems =
     let
-      options = [
-        "gid=users"
-        "noauto"
-        "nofail"
-        "uid=alunduil"
-        "x-systemd.automount"
-        "x-systemd.device-timeout=10s"
-        "x-systemd.idle-timeout=30s"
-        "credentials=/etc/cifs.credentials"
-      ];
-    in {
-      "/media/freenas/documents" = {
-        device = "//freenas/documents";
-        fsType = "cifs";
-        noCheck = true;
-        options = options;
+      filesystem = name: {
+        name = "/media/freenas/${name}";
+        value = {
+          device = "//freenas.lan/${name}";
+          fsType = "cifs";
+          noCheck = true;
+          options = [
+            "uid=alunduil"
+            "gid=users"
+            "credentials=/etc/cifs.credentials"
+            "x-systemd.automount"
+            "x-systemd.idle-timeout=30s"
+          ];
+        };
       };
-
-      "/media/freenas/media" = {
-        device = "//freenas/media";
-        fsType = "cifs";
-        noCheck = true;
-        options = options;
-      };
-
-      "/media/freenas/scans" = {
-        device = "//freenas/scans";
-        fsType = "cifs";
-        noCheck = true;
-        options = options;
-      };
-    };
+    in builtins.listToAttrs [
+      (filesystem "documents")
+      (filesystem "media")
+      (filesystem "scans")
+    ];
 }
