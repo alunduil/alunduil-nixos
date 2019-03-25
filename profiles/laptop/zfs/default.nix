@@ -1,46 +1,21 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    "../../../modules/zfs-replication.nix"
+  ];
+
   boot.supportedFilesystems = [
     "zfs"
   ];
 
-  environment.systemPackages = [
-    pkgs.lz4
-  ];
-
-  systemd.services."zfs-replication" = {
-    after = [
-      "zfs-snapshot-daily.service"
-      "zfs-snapshot-frequent.service"
-      "zfs-snapshot-hourly.service"
-      "zfs-snapshot-monthly.service"
-      "zfs-snapshot-weekly.service"
-    ];
-    description = "ZFS Snapshot Replication";
-    documentation = [
-      "https://github.com/alunduil/zfs-replicate"
-    ];
-    enable = true;
-    path = [
-      (pkgs.callPackage ./zfs-replicate.nix {
-        inherit (pkgs.python36Packages) buildPythonApplication click fetchPypi hypothesis pytest pytestcov pytestrunner;
-        stringcase = (pkgs.callPackage ./stringcase.nix {
-          inherit (pkgs.python36Packages) buildPythonPackage fetchPypi;
-        });
-      })
-    ];
-    restartIfChanged = false;
-    script = "zfs-replicate --recursive -l alunduil -i /home/alunduil/.ssh/id_rsa --follow-delete groton.alunduil.com volume-11f20cf1-b1b1-4d83-a356-56212ce80221/backups/alunduil/laptop ${config.networking.hostName}-boot/ROOT";
-    wantedBy = [
-      "zfs-snapshot-daily.service"
-      "zfs-snapshot-frequent.service"
-      "zfs-snapshot-hourly.service"
-      "zfs-snapshot-monthly.service"
-      "zfs-snapshot-weekly.service"
-    ];
-  };
-
   services.zfs = {
+    autoReplication."${config.networking.hostName}-boot/ROOT" = {
+      destination = "volume-11f20cf1-b1b1-4d83-a356-56212ce80221/backups/alunduil/laptop";
+      enable = true;
+      hostname = "groton.alunduil.com";
+      identityPath = "/home/alunduil/.ssh/id_rsa";
+      username = "alunduil";
+    };
     autoScrub.enable = true;
     autoSnapshot = {
       daily = 14;
