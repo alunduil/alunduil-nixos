@@ -61,6 +61,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.lz4
+    ];
+
     systemd.services."zfs-replication" = {
       after = [
         "zfs-snapshot-daily.service"
@@ -72,9 +76,6 @@ in {
       description = "ZFS Snapshot Replication";
       documentation = [
         "https://github.com/alunduil/zfs-replicate"
-      ];
-      path = [
-        pkgs.lz4
       ];
       restartIfChanged = false;
       script = "${zfs-replicate}/bin/zfs-replicate${recursive} -l ${escapeShellArg cfg.username} -i ${escapeShellArg cfg.identityFilePath}${followDelete} ${escapeShellArg cfg.host} ${escapeShellArg cfg.remoteFilesystem} ${escapeShellArg cfg.localFilesystem}";
