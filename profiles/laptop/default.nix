@@ -16,7 +16,7 @@
     ./upower.nix
     ./urxvtd.nix
     ./xserver.nix
-    ./zfs
+    ./zfs.nix
   ];
 
   environment.systemPackages = [

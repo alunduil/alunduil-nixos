@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    "../../../modules/zfs-replication.nix"
+    ../../modules/zfs-replication.nix
   ];
 
   boot.supportedFilesystems = [
@@ -9,11 +9,12 @@
   ];
 
   services.zfs = {
-    autoReplication."${config.networking.hostName}-boot/ROOT" = {
-      destination = "volume-11f20cf1-b1b1-4d83-a356-56212ce80221/backups/alunduil/laptop";
+    autoReplication = {
       enable = true;
-      hostname = "groton.alunduil.com";
-      identityPath = "/home/alunduil/.ssh/id_rsa";
+      host = "groton.alunduil.com";
+      identityFilePath = "/home/alunduil/.ssh/id_rsa";
+      localFilesystem = "${config.networking.hostName}-boot/ROOT";
+      remoteFilesystem = "volume-11f20cf1-b1b1-4d83-a356-56212ce80221/backups/alunduil/laptop";
       username = "alunduil";
     };
     autoScrub.enable = true;
