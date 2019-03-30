@@ -10,31 +10,41 @@
     pkgs.xorg.xkill
   ];
 
-  services.xserver = {
-    displayManager.sddm.enable = true;
-
-    enable = true;
-
-    libinput = {
-      accelSpeed = "1";
-      disableWhileTyping = true;
+  services = {
+    compton = {
+      backend = "glx";
       enable = true;
+      /*
+      extraOptions = "unredir-if-possible = true;";
+      */
     };
 
-    videoDrivers = [
-      "modesetting"
-      "vesa"
-    ];
+    xserver = {
+      displayManager.sddm.enable = true;
 
-    windowManager = {
-      default = "xmonad";
+      enable = true;
 
-      xmonad = {
+      libinput = {
+        accelSpeed = "1";
+        disableWhileTyping = true;
         enable = true;
-        enableContribAndExtras = true;
       };
-    };
 
-    xkbOptions = "compose:caps";
+      videoDrivers = [
+        "modesetting"
+        "vesa"
+      ];
+
+      windowManager = {
+        default = "xmonad";
+
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+        };
+      };
+
+      xkbOptions = "compose:caps";
+    };
   };
 }
