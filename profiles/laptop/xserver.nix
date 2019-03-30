@@ -2,7 +2,6 @@
 {
   environment.systemPackages = [
     pkgs.dmenu
-    pkgs.fvwm
     pkgs.glxinfo
     pkgs.sddm-kcm
     pkgs.xclip
@@ -14,9 +13,6 @@
     compton = {
       backend = "glx";
       enable = true;
-      /*
-      extraOptions = "unredir-if-possible = true;";
-      */
     };
 
     xserver = {
