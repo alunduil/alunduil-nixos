@@ -5,10 +5,7 @@
     ./users/alunduil.nix
   ];
 
-  boot = {
-    earlyVconsoleSetup = true;
-    tmpOnTmpfs = true;
-  };
+  boot.tmpOnTmpfs = true;
 
   environment = {
     pathsToLink = [
