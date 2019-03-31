@@ -16,7 +16,17 @@
     };
 
     xserver = {
-      displayManager.sddm.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        extraConfig = ''
+          [Wayland]
+          EnableHiDPI=true
+
+          [X11]
+          EnableHiDPI=true
+        '';
+        theme = "elarun";
+      };
 
       enable = true;
 
