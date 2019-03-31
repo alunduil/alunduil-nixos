@@ -4,12 +4,12 @@
 
 buildPythonApplication rec {
   pname = "zfs-replicate";
-  version = "1.1.0";
+  version = "1.1.3";
   name = "${pname}-${version}";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0lnppbai1ypal4iwna14kqh7q5nzc3py55qp4ikdrxnm17h1103c";
+    sha256 = "0fmm8611x9f6lwmghyphignd0a6i5d1cr7w3vgali2xjdwqq1j7a";
   };
 
   checkInputs = [
@@ -17,23 +17,18 @@ buildPythonApplication rec {
     mypy
     pytest
     pytestcov
-    pytestrunner
   ];
 
-  buildInputs = [];
+  buildInputs = [
+    pytestrunner
+  ];
 
   propagatedBuildInputs = [
     click
     stringcase
   ];
 
-  /*
-  postPatch = ''
-    patchShebangs bin
-  '';
-  */
-
-  doCheck = true;
+  doCheck = false;
 
   checkPhase = ''
     pytest --doctest-modules
