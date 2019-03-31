@@ -23,8 +23,7 @@
     pkgs.alacritty
     pkgs.google-chrome
     pkgs.gource
-    pkgs.python27Packages.goobook
-    pkgs.python36Packages.docker_compose
+    pkgs.python36Packages.goobook
   ];
 
   fonts = {
