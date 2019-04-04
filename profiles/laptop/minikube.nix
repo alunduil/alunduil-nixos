@@ -9,6 +9,7 @@
     pkgs.docker-machine-kvm
     pkgs.docker-machine-kvm2
     pkgs.kubectl
+    pkgs.kubernetes-helm
     pkgs.minikube
   ];
 }
