@@ -23,6 +23,8 @@
     pkgs.alacritty
     pkgs.google-chrome
     pkgs.gource
+    pkgs.kubectl
+    pkgs.minikube
     pkgs.python36Packages.goobook
   ];
 
