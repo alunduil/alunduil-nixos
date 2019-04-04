@@ -4,10 +4,10 @@
     ./chromecast.nix
     ./cifs
     ./libvirtd.nix
-    ../../services/postfix
+    ./minikube.nix
     ./pulseaudio.nix
     ./redshift.nix
-    ../../services/docker.nix
+    ../../services/postfix
     ./slock.nix
     ../../system.nix
     ./tmux.nix
@@ -23,8 +23,6 @@
     pkgs.alacritty
     pkgs.google-chrome
     pkgs.gource
-    pkgs.kubectl
-    pkgs.minikube
     pkgs.python36Packages.goobook
   ];
 
