@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = [
     pkgs.smartmontools
@@ -11,6 +11,9 @@
       defaults.autodetected = defaults;
       defaults.monitored = defaults;
       enable = true;
-      notifications.mail.enable = true;
+      notifications.mail = {
+        enable = true;
+        recipient = "alunduil+${config.networking.hostName}@gmail.com";
+      };
     };
 }
