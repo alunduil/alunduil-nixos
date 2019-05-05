@@ -14,7 +14,6 @@
     ./udiskie.nix
     ./unclutter.nix
     ./upower.nix
-    ./urxvtd.nix
     ./xserver.nix
     ./zfs.nix
   ];
