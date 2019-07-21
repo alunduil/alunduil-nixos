@@ -4,12 +4,12 @@
 
 buildPythonApplication rec {
   pname = "zfs-replicate";
-  version = "1.1.4";
+  version = "1.1.11";
   name = "${pname}-${version}";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1cyxiplwyi1yr0cpn7f8a72ladcwrm2i1dhwwsf9dyrhlig9ynkz";
+    sha256 = "0386xc6rw6bhzw2a08g90afb3snqhm1ikx65bjfh22ha69fwmga8";
   };
 
   checkInputs = [
@@ -28,7 +28,7 @@ buildPythonApplication rec {
     stringcase
   ];
 
-  doCheck = false;
+  doCheck = true;
 
   checkPhase = ''
     pytest --doctest-modules
