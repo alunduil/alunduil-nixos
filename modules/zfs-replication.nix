@@ -11,8 +11,8 @@ let
     inherit (pkgs.python36Packages) buildPythonApplication click fetchPypi hypothesis pytest pytestcov pytestrunner;
     inherit stringcase;
   });
-  recursive = if cfg.recursive then " --recursive" else "";
-  followDelete = if cfg.followDelete then " --follow-delete" else "";
+  recursive = optionalString cfg.recursive " --recursive";
+  followDelete = optionalString cfg.followDelete " --follow-delete";
 in {
   options.services.zfs.autoReplication = {
     enable = mkEnableOption "ZFS snapshot replication.";
@@ -78,7 +78,7 @@ in {
         "https://github.com/alunduil/zfs-replicate"
       ];
       restartIfChanged = false;
-      script = "${zfs-replicate}/bin/zfs-replicate${recursive} -l ${escapeShellArg cfg.username} -i ${escapeShellArg cfg.identityFilePath}${followDelete} ${escapeShellArg cfg.host} ${escapeShellArg cfg.remoteFilesystem} ${escapeShellArg cfg.localFilesystem}";
+      serviceConfig.execStart = "${zfs-replicate}/bin/zfs-replicate${recursive} -l ${escapeShellArg cfg.username} -i ${escapeShellArg cfg.identityFilePath}${followDelete} ${escapeShellArg cfg.host} ${escapeShellArg cfg.remoteFilesystem} ${escapeShellArg cfg.localFilesystem}";
       wantedBy = [
         "zfs-snapshot-daily.service"
         "zfs-snapshot-frequent.service"
