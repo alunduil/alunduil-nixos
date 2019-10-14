@@ -1,12 +1,12 @@
 { ... }:
 {
+  location.provider = "geoclue2";
+
   services.redshift = {
     enable = true;
     extraOptions = [
       "-m randr"
     ];
-
-    provider = "geoclue2";
 
     temperature = {
       day = 6500;
