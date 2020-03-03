@@ -4,13 +4,7 @@ with lib;
 
 let
   cfg = config.services.zfs.autoReplication;
-  stringcase = (pkgs.callPackage ../pkgs/stringcase.nix {
-    inherit (pkgs.python36Packages) buildPythonPackage fetchPypi;
-  });
-  zfs-replicate = (pkgs.callPackage ../pkgs/zfs-replicate.nix {
-    inherit (pkgs.python36Packages) buildPythonApplication click fetchPypi hypothesis pytest pytestcov pytestrunner;
-    inherit stringcase;
-  });
+  zfs-replicate = pkgs.zfs-replicate;
   recursive = optionalString cfg.recursive " --recursive";
   followDelete = optionalString cfg.followDelete " --follow-delete";
 in {
