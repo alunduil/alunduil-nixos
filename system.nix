@@ -38,7 +38,7 @@
     };
   };
 
-  i18n.defaultLocale = "en_UK.UTF-8";
+  i18n.defaultLocale = "en_GB.UTF-8";
 
   nix = {
     autoOptimiseStore = true;
