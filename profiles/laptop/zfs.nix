@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ../../modules/zfs-replication.nix
-  ];
-
   boot.supportedFilesystems = [
     "zfs"
   ];

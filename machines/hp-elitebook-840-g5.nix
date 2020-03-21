@@ -15,7 +15,7 @@
     };
   };
 
-  i18n.consoleFont = "latercyrheb-sun32";
+  console.font = "latercyrheb-sun32";
 
   services = {
     xserver = {

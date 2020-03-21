@@ -16,16 +16,19 @@
     };
 
     xserver = {
-      displayManager.sddm = {
-        enable = true;
-        extraConfig = ''
-          [Wayland]
-          EnableHiDPI=true
+      displayManager = {
+        defaultSession = "none+xmond";
+        sddm = {
+          enable = true;
+          extraConfig = ''
+            [Wayland]
+            EnableHiDPI=true
 
-          [X11]
-          EnableHiDPI=true
-        '';
-        theme = "elarun";
+            [X11]
+            EnableHiDPI=true
+          '';
+          theme = "elarun";
+        };
       };
 
       enable = true;
@@ -42,8 +45,6 @@
       ];
 
       windowManager = {
-        default = "xmonad";
-
         xmonad = {
           enable = true;
           enableContribAndExtras = true;
