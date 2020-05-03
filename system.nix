@@ -82,6 +82,7 @@
       daemon.enable = true;
       updater.enable = true;
     };
+    localtime.enable = true;
     sysstat.enable = true;
   };
 
