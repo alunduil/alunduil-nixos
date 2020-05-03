@@ -67,11 +67,7 @@
     sudo.wheelNeedsPassword = false;
   };
 
-  services = {
-    acpid.enable = true;
-    cron.enable = false;
-    fcron.enable = true;
-  };
+  services.acpid.enable = true;
 
   system.autoUpgrade.enable = true;
 }
