@@ -20,6 +20,7 @@
       pkgs.iotop
       pkgs.iptraf-ng
       pkgs.jq
+      pkgs.lm_sensors
       pkgs.lsof
       pkgs.ncdu
       pkgs.nethogs
