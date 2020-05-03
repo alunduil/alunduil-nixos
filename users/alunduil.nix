@@ -6,7 +6,6 @@
       extraGroups = [
         "audio"
         "docker"
-        "fcron"
         "libvirtd"
         "networkmanager"
         "systemd-journal"
