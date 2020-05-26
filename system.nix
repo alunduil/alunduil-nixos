@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    <nixpkgs/nixos/modules/profiles/hardened.nix>
     ./services/smartd.nix
     ./users/alunduil.nix
   ];
@@ -63,6 +64,7 @@
   security = {
     apparmor.enable = true;
     audit.enable = true;
+    allowUserNamespaces = true;
     #lockKernelModules = true;
     sudo.wheelNeedsPassword = false;
   };
