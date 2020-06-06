@@ -64,8 +64,16 @@
   security = {
     allowUserNamespaces = true;
     apparmor.enable = true;
+    audit = {
+      backlogLimit = 8192;
+      enable = true;
+      rules = [
+        "-a exit,never -F arch=b32 -S read -S write -S open -S fstat -S mmap -S brk -S munmap -S nanosleep -S fcntl -S close -S dup2 -S rt_sigaction -S stat"
+        "-a exit,never -F arch=b64 -S read -S write -S open -S fstat -S mmap -S brk -S munmap -S nanosleep -S fcntl -S close -S dup2 -S rt_sigaction -S stat"
+        "-a exit,always -S all"
+      ];
+    };
     auditd.enable = true;
-    audit.enable = true;
     sudo.wheelNeedsPassword = false;
   };
 
