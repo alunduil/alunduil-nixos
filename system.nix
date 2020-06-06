@@ -75,6 +75,7 @@
       daemon.enable = true;
       updater.enable = true;
     };
+    sysstat.enable = true;
   };
 
   system.autoUpgrade.enable = true;

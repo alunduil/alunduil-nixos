@@ -2,11 +2,11 @@
 {
   services.postfix = {
     config = {
-      disable_vrfy = "no";
+      disable_vrfy_command = "yes";
       inet_interfaces = "loopback-only";
       mynetworks = "127.0.0.0/8 [::1]/128";
       smtpd_banner = "$myhostname ESMTP";
-      smptd_helo_required = "yes";
+      smtpd_helo_required = "yes";
     };
     domain = "alunduil.com";
     enable = true;
