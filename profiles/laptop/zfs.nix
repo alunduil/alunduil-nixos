@@ -23,4 +23,6 @@
       weekly = 8;
     };
   };
+
+  virtualisation.docker.storageDriver = "zfs";
 }

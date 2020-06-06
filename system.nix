@@ -62,14 +62,20 @@
   };
 
   security = {
-    apparmor.enable = true;
-    audit.enable = true;
     allowUserNamespaces = true;
-    #lockKernelModules = true;
+    apparmor.enable = true;
+    auditd.enable = true;
+    audit.enable = true;
     sudo.wheelNeedsPassword = false;
   };
 
-  services.acpid.enable = true;
+  services = {
+    acpid.enable = true;
+    clamav = {
+      daemon.enable = true;
+      updater.enable = true;
+    };
+  };
 
   system.autoUpgrade.enable = true;
 }
