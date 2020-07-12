@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  boot.kernelModules = [ "md4" ];
+
   environment.etc = {
     "cifs.credentials" = {
       mode = "0600";
