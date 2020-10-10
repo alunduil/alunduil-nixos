@@ -73,6 +73,7 @@
       ];
     };
     auditd.enable = true;
+    lockKernelModules = false;
     sudo.wheelNeedsPassword = false;
   };
 
