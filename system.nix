@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    <nixpkgs/nixos/modules/profiles/hardened.nix>
     ./services/smartd.nix
     ./users/alunduil.nix
   ];
