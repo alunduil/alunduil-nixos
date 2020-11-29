@@ -37,7 +37,7 @@
           lines following this format:
 
           [mail.example.com]:587 username:password
-          '';
+        '';
       };
     };
   };

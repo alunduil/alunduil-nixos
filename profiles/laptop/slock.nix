@@ -12,6 +12,6 @@
 
   services.xserver.displayManager.sessionCommands =
     ''
-    ${pkgs.xautolock}/bin/xautolock -time 3 -locker /run/wrappers/bin/slock &
+      ${pkgs.xautolock}/bin/xautolock -time 3 -locker /run/wrappers/bin/slock &
     '';
 }

@@ -1,8 +1,8 @@
 # Description
 
-Personal [NixOS] Configurations
+Personal [NixOS][nixos] Configurations
 
-Complete [Nix] configuration for all hosts I run [NixOS] on.  Including a custom
+Complete [Nix][nix] configuration for all hosts I run [NixOS][nixos] on.  Including a custom
 ISO for installation.
 
 # Getting Started
@@ -30,12 +30,12 @@ dd if=result/iso/*.iso of=/dev/sd? bs=4096
 
 # Reporting Issues
 
-Any issues discovered should be recorded on [github][issues].  If you believe
+Any issues discovered should be recorded on \[github\]\[issues\].  If you believe
 you've found an improvement or typo, please ensure that it is reported.
 
 If you would like to contribute a fix or new content, please submit a pull
-request.  This project follow the [github flow] to make manual review simple.
+request.  This project follow the [github flow][github flow] to make manual review simple.
 
 [github flow]: https://guides.github.com/introduction/flow/
-[Nix]: https://nixos.org/nixos/manual/
-[NixOS]: https://nixos.org/nixos/manual/
+[nix]: https://nixos.org/nixos/manual/
+[nixos]: https://nixos.org/nixos/manual/

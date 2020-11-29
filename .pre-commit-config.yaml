@@ -1,0 +1,66 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v3.3.0
+      hooks:
+          - id: check-added-large-files
+          - id: check-case-conflict
+          - id: check-json
+          - id: check-merge-conflict
+          - id: check-symlinks
+          - id: check-toml
+          - id: check-vcs-permalinks
+          - id: check-xml
+          - id: check-yaml
+          - id: detect-private-key
+          - id: end-of-file-fixer
+          - id: fix-encoding-pragma
+          - id: mixed-line-ending
+          - id: name-tests-test
+          - id: pretty-format-json
+          - id: sort-simple-yaml
+          - id: trailing-whitespace
+    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+      rev: 0.1.0
+      hooks:
+          - id: yamlfmt
+            exclude: \.travis\.ya?ml$
+    - repo: git://github.com/detailyang/pre-commit-shell
+      rev: 1.0.5
+      hooks:
+          - id: shell-lint
+            args: [--format=json]
+            exclude: with$
+    - repo: https://github.com/adrienverge/yamllint
+      rev: v1.25.0
+      hooks:
+          - id: yamllint
+            args: [--format, parsable, --strict]
+            exclude: \.travis\.ya?ml$
+            additional_dependencies: [pyyaml]
+    - repo: https://github.com/codespell-project/codespell
+      rev: v1.17.1
+      hooks:
+          - id: codespell
+    - repo: https://github.com/pappasam/toml-sort
+      rev: v0.18.0
+      hooks:
+          - id: toml-sort
+            args: [--in-place]
+            additional_dependencies: [click]
+    - repo: https://github.com/executablebooks/mdformat
+      rev: 0.4.0  # Use the ref you want to point at
+      hooks:
+          - id: mdformat
+            additional_dependencies:
+                - mdformat-tables
+                - attr
+    - repo: local
+      hooks:
+          - id: nixpkgs-fmt
+            name: nixpkgs-fmt
+            entry: nixpkgs-fmt
+            language: system
+            types: [nix]
