@@ -25,7 +25,7 @@
 
           username=username
           password=password
-          '';
+        '';
       };
     };
   };
@@ -51,7 +51,8 @@
           ];
         };
       };
-    in builtins.listToAttrs [
+    in
+    builtins.listToAttrs [
       (filesystem "documents")
       (filesystem "media")
       (filesystem "scans")
