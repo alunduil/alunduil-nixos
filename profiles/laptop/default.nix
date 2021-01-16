@@ -1,15 +1,16 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ../../services/postfix
+    ../../system.nix
     ./chromecast.nix
     ./cifs
     ./libvirtd.nix
     ./minikube.nix
+    ./printing.nix
     ./pulseaudio.nix
     ./redshift.nix
-    ../../services/postfix
     ./slock.nix
-    ../../system.nix
     ./tmux.nix
     ./udiskie.nix
     ./unclutter.nix
