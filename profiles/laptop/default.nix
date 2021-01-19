@@ -3,7 +3,6 @@
   imports = [
     ../../services/postfix
     ../../system.nix
-    ./chromecast.nix
     ./cifs
     ./libvirtd.nix
     ./minikube.nix
