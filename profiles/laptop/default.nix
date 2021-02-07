@@ -22,6 +22,7 @@
     pkgs.alacritty
     pkgs.google-chrome
     pkgs.gource
+    pkgs.ipmitool
     pkgs.python36Packages.goobook
   ];
 
