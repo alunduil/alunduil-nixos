@@ -23,6 +23,7 @@
     pkgs.google-chrome
     pkgs.gource
     pkgs.ipmitool
+    pkgs.keybase
     pkgs.python36Packages.goobook
   ];
 
