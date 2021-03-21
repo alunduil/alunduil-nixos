@@ -4,6 +4,7 @@
     ../../services/postfix
     ../../system.nix
     ./cifs
+    ./keybase.nix
     ./libvirtd.nix
     ./minikube.nix
     ./printing.nix
