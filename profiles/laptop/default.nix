@@ -25,12 +25,11 @@
     pkgs.gource
     pkgs.ipmitool
     pkgs.keybase
-    pkgs.python36Packages.goobook
   ];
 
   fonts = {
     enableDefaultFonts = true;
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = [
       pkgs.noto-fonts
       pkgs.noto-fonts-cjk
