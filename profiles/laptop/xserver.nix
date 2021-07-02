@@ -20,13 +20,7 @@
         defaultSession = "none+xmond";
         sddm = {
           enable = true;
-          extraConfig = ''
-            [Wayland]
-            EnableHiDPI=true
-
-            [X11]
-            EnableHiDPI=true
-          '';
+          settings = { Wayland = { EnableHiDPI = true; }; X11 = { EnableHiDPI = true; }; };
           theme = "elarun";
         };
       };
@@ -34,9 +28,11 @@
       enable = true;
 
       libinput = {
-        accelSpeed = "1";
-        disableWhileTyping = true;
         enable = true;
+        touchpad = {
+          accelSpeed = "1";
+          disableWhileTyping = true;
+        };
       };
 
       videoDrivers = [
