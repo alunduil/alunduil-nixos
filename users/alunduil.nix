@@ -2,7 +2,7 @@
 {
   users.users = {
     alunduil = {
-      description = "Alex Brandt,,,210.723.0367,alunduil@gmail.com";
+      description = "Alex Brandt,,,+1.210.723.0367,alunduil@gmail.com";
       extraGroups = [
         "audio"
         "docker"
