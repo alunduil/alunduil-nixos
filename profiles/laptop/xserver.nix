@@ -17,7 +17,7 @@
 
     xserver = {
       displayManager = {
-        defaultSession = "none+xmond";
+        defaultSession = "sway";
         sddm = {
           enable = true;
           settings = { Wayland = { EnableHiDPI = true; }; X11 = { EnableHiDPI = true; }; };
