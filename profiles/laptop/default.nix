@@ -10,7 +10,6 @@
     ./printing.nix
     ./pulseaudio.nix
     ./redshift.nix
-    ./slock.nix
     ./sway.nix
     ./tmux.nix
     ./udiskie.nix
