@@ -3,7 +3,6 @@
   environment.systemPackages = [
     pkgs.dmenu
     pkgs.glxinfo
-    pkgs.sddm-kcm
     pkgs.xclip
     pkgs.xorg.xev
     pkgs.xorg.xkill
@@ -17,12 +16,8 @@
 
     xserver = {
       displayManager = {
-        defaultSession = "sway";
-        sddm = {
-          enable = true;
-          settings = { Wayland = { EnableHiDPI = true; }; X11 = { EnableHiDPI = true; }; };
-          theme = "elarun";
-        };
+        defaultSession = "gnome";
+        gdm.enable = true;
       };
 
       enable = true;
@@ -40,12 +35,7 @@
         "vesa"
       ];
 
-      windowManager = {
-        xmonad = {
-          enable = true;
-          enableContribAndExtras = true;
-        };
-      };
+      desktopManager.gnome.enable = true;
 
       xkbOptions = "compose:caps";
     };

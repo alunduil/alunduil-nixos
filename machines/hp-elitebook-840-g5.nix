@@ -9,7 +9,7 @@
   boot = {
     loader = {
       systemd-boot = {
-        configurationLimit = 150;
+        configurationLimit = 75;
         consoleMode = "auto";
         editor = false;
         enable = true;
