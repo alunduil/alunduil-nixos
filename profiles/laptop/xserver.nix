@@ -25,7 +25,7 @@
       libinput = {
         enable = true;
         touchpad = {
-          accelSpeed = "1";
+          accelSpeed = "1.5";
           disableWhileTyping = true;
         };
       };
