@@ -8,12 +8,7 @@
     ./libvirtd.nix
     ./minikube.nix
     ./printing.nix
-    ./pulseaudio.nix
-    ./redshift.nix
-    ./sway.nix
     ./tmux.nix
-    ./udiskie.nix
-    ./unclutter.nix
     ./upower.nix
     ./xserver.nix
     ./zfs.nix
