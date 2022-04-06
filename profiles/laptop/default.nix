@@ -20,6 +20,7 @@
     pkgs.gource
     pkgs.ipmitool
     pkgs.keybase
+    pkgs.vscode-fhs
   ];
 
   fonts = {
