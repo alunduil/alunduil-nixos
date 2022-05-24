@@ -12,5 +12,5 @@
   services.postfix.hostname = pkgs.lib.mkForce "odin.laptops.alunduil.com";
   system.stateVersion = "19.03";
 
-  time.timeZone = "Europe/London";
+  #time.timeZone = "Europe/London";
 }
