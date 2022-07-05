@@ -15,10 +15,8 @@
   ];
 
   environment.systemPackages = [
-    pkgs.alacritty
     pkgs.google-chrome
     pkgs.gource
-    pkgs.ipmitool
     pkgs.keybase
     pkgs.vscode-fhs
   ];
