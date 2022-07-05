@@ -41,6 +41,8 @@
 
   i18n.defaultLocale = "en_GB.UTF-8";
 
+  location.provider = "geoclue2";
+
   nix = {
     autoOptimiseStore = true;
     buildCores = 0;
