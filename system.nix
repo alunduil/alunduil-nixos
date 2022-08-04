@@ -87,6 +87,7 @@
     geoclue2.appConfig."localtimed" = { users = [ "997" ]; isSystem = true; isAllowed = true; };
     localtime.enable = true;
     sysstat.enable = true;
+    tailscale.enable = true;
   };
 
   system.autoUpgrade.enable = true;
