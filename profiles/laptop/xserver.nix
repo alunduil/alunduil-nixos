@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = [
+    pkgs.chrome-gnome-shell
+  ];
+
   services = {
     xserver = {
       displayManager = {
